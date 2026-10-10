@@ -1,7 +1,7 @@
 {
   "clerk": {
     "file": "agents/halalpilot-evidence-clerk.md",
-    "chars": 3399,
+    "chars": 3344,
     "skills": [
       "halal-evidence-protocol",
       "halal-readiness-pack"
@@ -9,7 +9,7 @@
   },
   "investigator": {
     "file": "agents/halalpilot-ingredient-investigator.md",
-    "chars": 3805,
+    "chars": 3738,
     "skills": [
       "halal-evidence-protocol",
       "halal-readiness-pack"
@@ -17,7 +17,7 @@
   },
   "process-builder": {
     "file": "agents/halalpilot-process-builder.md",
-    "chars": 2877,
+    "chars": 2827,
     "skills": [
       "halal-evidence-protocol",
       "halal-readiness-pack"
@@ -25,7 +25,7 @@
   },
   "auditor": {
     "file": "agents/halalpilot-mock-auditor.md",
-    "chars": 4036,
+    "chars": 3962,
     "skills": [
       "halal-evidence-protocol",
       "halal-readiness-pack"

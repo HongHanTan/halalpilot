@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { topActions } from "@/lib/pack";
 import type { RunState } from "@/lib/orchestrator";
+import type { DocFile } from "@/lib/types";
 import EvidenceChain from "./EvidenceChain";
 
 function download(name: string, text: string, type = "application/json") {
@@ -42,7 +43,7 @@ function ScoreRing({ score, status }: { score: number; status: string }) {
   );
 }
 
-export default function Results({ state }: { state: RunState }) {
+export default function Results({ state, files }: { state: RunState; files?: DocFile[] }) {
   const v = state.validation;
   const rd = v?.readiness;
   const m: any = state.data.manifest;
@@ -137,7 +138,7 @@ export default function Results({ state }: { state: RunState }) {
         </div>
       </div>
 
-      <EvidenceChain manifest={m} matrix={matrix} />
+      <EvidenceChain manifest={m} matrix={matrix} files={files} />
 
       {rows.length > 0 && (
         <div className="card">

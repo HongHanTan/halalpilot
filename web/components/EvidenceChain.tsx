@@ -1,6 +1,8 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
+import type { DocFile } from "@/lib/types";
+import { CERT_BOX, DocModal, type Mark } from "./DocPreview";
 
 const PROBLEM = new Set(["EXPIRED", "MISMATCH", "NO_CERT", "NEEDS_REVIEW"]);
 const ORDER: Record<string, number> = { EXPIRED: 0, MISMATCH: 1, NO_CERT: 2, NEEDS_REVIEW: 3, EXPIRING: 4, LOW_RISK_NO_CERT: 5, VERIFIED: 6 };
@@ -10,6 +12,7 @@ interface Link {
   main: string;
   sub?: string;
   state: "ok" | "bad" | "none";
+  onOpen?: () => void;
 }
 
 function Chain({ links, breakAt }: { links: Link[]; breakAt: number }) {
@@ -22,19 +25,38 @@ function Chain({ links, breakAt }: { links: Link[]; breakAt: number }) {
               {i === breakAt ? "✕" : ""}
             </span>
           )}
-          <div className={`chain-box ${l.state}`}>
-            <div className="chain-label">{l.label}</div>
-            <div className="chain-main">{l.main}</div>
-            {l.sub && <div className="chain-sub">{l.sub}</div>}
-          </div>
+          {(() => {
+            const inner = (
+              <>
+                <div className="chain-label">{l.label}</div>
+                <div className="chain-main">{l.main}</div>
+                {l.sub && <div className="chain-sub">{l.sub}</div>}
+                {l.onOpen && <div className="chain-open">View document ↗</div>}
+              </>
+            );
+            return l.onOpen ? (
+              <button type="button" className={`chain-box ${l.state} clickable`} onClick={l.onOpen}>
+                {inner}
+              </button>
+            ) : (
+              <div className={`chain-box ${l.state}`}>{inner}</div>
+            );
+          })()}
         </div>
       ))}
     </div>
   );
 }
 
-export default function EvidenceChain({ manifest, matrix }: { manifest: any; matrix: any }) {
+export default function EvidenceChain({ manifest, matrix, files = [] }: { manifest: any; matrix: any; files?: DocFile[] }) {
   const [problemsOnly, setProblemsOnly] = useState(false);
+  // The certificate scan: a same-named image in the uploaded folder, else the bundled demo scan.
+  const stem = (f: DocFile) => (f.path.split("/").pop() ?? "").replace(/\.[^.]+$/, "");
+  const scanOf = (f: DocFile) => {
+    const img = files.find((x) => x.kind === "image" && x.data && stem(x) === stem(f));
+    return img ? `data:${img.mime ?? "image/jpeg"};base64,${img.data}` : `/demo/certs/${stem(f)}.jpg`;
+  };
+  const [open, setOpen] = useState<{ file: DocFile; mark: Mark } | null>(null);
   const rows: any[] = matrix?.rows ?? [];
   if (!rows.length) return null;
 
@@ -69,6 +91,8 @@ export default function EvidenceChain({ manifest, matrix }: { manifest: any; mat
         const sup = suppliers.find((s) => s.supplier_id === r.supplier_id);
         const cert = certs.find((c) => c.cert_id === r.cert_id);
         const bad = PROBLEM.has(r.verdict);
+        const certFile = files.find((f) => f.doc_id === (cert?.doc_id ?? cert?.source));
+        const expiry: string | undefined = r.cert_expiry ?? cert?.expiry_date ?? undefined;
 
         const links: Link[] = [
           {
@@ -94,6 +118,18 @@ export default function EvidenceChain({ manifest, matrix }: { manifest: any; mat
             main: cert?.certificate_no ?? (r.verdict === "LOW_RISK_NO_CERT" ? "none needed?" : "none in folder"),
             sub: r.cert_expiry ? `expires ${r.cert_expiry}` : undefined,
             state: cert ? (bad ? "bad" : "ok") : r.verdict === "LOW_RISK_NO_CERT" ? "none" : "bad",
+            onOpen: certFile
+              ? () =>
+                  setOpen({
+                    file: certFile,
+                    mark: {
+                      imageSrc: scanOf(certFile),
+                      box: CERT_BOX[stem(certFile)],
+                      date: expiry,
+                      note: expiry ? (r.verdict === "EXPIRED" ? `EXPIRED on ${expiry}` : `Expiry date: ${expiry}`) : undefined,
+                    },
+                  })
+              : undefined,
           },
         ];
         // Where the chain actually breaks: the first missing link, else the certificate.
@@ -113,6 +149,7 @@ export default function EvidenceChain({ manifest, matrix }: { manifest: any; mat
           </div>
         );
       })}
+      {open && <DocModal file={open.file} mark={open.mark} onClose={() => setOpen(null)} />}
     </div>
   );
 }

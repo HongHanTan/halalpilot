@@ -5,6 +5,11 @@ import { localToday, runPipeline, type RunState } from "@/lib/orchestrator";
 import { loadRecording, replayFetch } from "@/lib/replay";
 import AgentFlow from "@/components/AgentFlow";
 import Results from "@/components/Results";
+import { DocCarousel, DocModal } from "@/components/DocPreview";
+import type { DocFile } from "@/lib/types";
+
+// Demo mode: every run replays the recorded output, so no Gemini API key or network call is needed.
+const DEMO_ONLY = true;
 
 const DEFAULT_PROMPT = "Get me ready for halal certification.";
 
@@ -19,6 +24,8 @@ export default function Page() {
   const [error, setError] = useState<string | null>(null);
   const [state, setState] = useState<RunState | null>(null);
   const [over, setOver] = useState(false);
+  const [runFiles, setRunFiles] = useState<DocFile[]>([]);
+  const [preview, setPreview] = useState<DocFile | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
@@ -60,7 +67,8 @@ export default function Page() {
     }
   };
 
-  const start = async (replay: boolean) => {
+  const start = async (replayArg: boolean) => {
+    const replay = replayArg || DEMO_ONLY;
     setBusy(true);
     setError(null);
     setIsReplay(replay);
@@ -77,6 +85,7 @@ export default function Page() {
         fetchImpl = replayFetch(rec);
         setFileName(`${rec.case} (recorded ${rec.recordedAt})`);
       }
+      setRunFiles(files);
       const final = await runPipeline(
         { files, inventory, ownerPrompt: prompt, accessCode: accessCode || undefined, fetchImpl },
         setState,
@@ -159,6 +168,8 @@ export default function Page() {
             </button>
           </div>
         )}
+        {intake && <DocCarousel files={intake.files} onOpen={setPreview} />}
+        {preview && <DocModal file={preview} onClose={() => setPreview(null)} />}
         <input
           ref={inputRef}
           type="file"
@@ -198,14 +209,14 @@ export default function Page() {
         </details>
 
         <div className="row" style={{ marginTop: 16 }}>
-          <button className="btn primary" onClick={() => start(false)} disabled={!intake || busy || reading}>
-            {busy && !isReplay ? "Running the team…" : "Run HalalPilot"}
+          <button className="btn primary" onClick={() => start(false)} disabled={(!intake && !DEMO_ONLY) || busy || reading}>
+            {busy ? "Running the team…" : "Run HalalPilot"}
           </button>
           {busy ? (
             <button className="btn" onClick={() => abortRef.current?.abort()}>
               Stop
             </button>
-          ) : (
+          ) : DEMO_ONLY ? null : (
             <button className="btn" onClick={() => start(true)} disabled={reading} title="Replays a recorded run through the same pipeline">
               Replay the demo run
             </button>
@@ -216,7 +227,7 @@ export default function Page() {
           </span>
         </div>
 
-        {isReplay && state && (
+        {isReplay && !DEMO_ONLY && state && (
           <div className="row" style={{ marginTop: 12 }}>
             <span className="replay-badge">● REPLAY — recorded agent output, not a live run</span>
           </div>
@@ -233,7 +244,7 @@ export default function Page() {
       {state?.done && state.error && state.data.manifest && (
         <div className="alert warn">The run stopped early. What the team produced before that is below.</div>
       )}
-      {state?.done && <Results state={state} />}
+      {state?.done && <Results state={state} files={runFiles} />}
 
       <footer className="foot">
         HalalPilot prepares an application. It does not certify anything, and it does not check certificates against the official JAKIM / state
