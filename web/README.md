@@ -42,7 +42,7 @@ Click **Use the demo case** to load `demo_dataset/sambal-mak-embun.zip` and pres
 2. **Root Directory: `web`** (Next.js is detected from there).
 3. Environment variables:
    - `GEMINI_API_KEY` — required, server-side only.
-   - `GEMINI_MODEL` — optional, default `gemini-2.5-flash`.
+   - `GEMINI_MODEL` — optional, default `gemini-2.5-flash`, set to `gemini-3.5-flash` here.
    - `ACCESS_CODE` — optional. If set, the page must send the same code before any agent call, so a
      public URL cannot burn your quota.
 4. Keep **Fluid Compute** on (default). `/api/agent` declares `maxDuration = 300`.

@@ -11,7 +11,8 @@
     "start": "next start",
     "test": "tsx tests/pipeline.test.ts && tsx tests/parity.test.ts",
     "test:pipeline": "tsx tests/pipeline.test.ts",
-    "test:parity": "tsx tests/parity.test.ts"
+    "test:parity": "tsx tests/parity.test.ts",
+    "test:live": "tsx tests/live-run.ts"
   },
   "dependencies": {
     "@google/genai": "^2.28.0",

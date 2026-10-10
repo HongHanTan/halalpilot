@@ -28,6 +28,11 @@ export function modelName(): string {
   return process.env.GEMINI_MODEL || "gemini-2.5-flash";
 }
 
+// thinkingConfig is spelled differently across model generations (budget vs level) and is rejected
+// outright by some. The first rejection turns it off for the life of the process.
+let thinkingSupported = true;
+const rejectsThinking = (msg: string) => /thinking|thought/i.test(msg) && /invalid|unsupported|unknown|not supported/i.test(msg);
+
 function parseJson(text: string): unknown {
   const t = text.trim();
   try {
@@ -48,7 +53,6 @@ export async function callGemini(call: GeminiCall): Promise<{ json: unknown; usa
   if (!apiKey) throw new GeminiError("GEMINI_API_KEY is not set on the server", "NO_KEY");
   const ai = new GoogleGenAI({ apiKey });
   const model = modelName();
-  const supportsThinking = /2\.5|3/.test(model);
 
   let lastErr = "";
   for (let attempt = 0; attempt < 4; attempt++) {
@@ -61,7 +65,7 @@ export async function callGemini(call: GeminiCall): Promise<{ json: unknown; usa
           responseMimeType: "application/json",
           temperature: call.temperature ?? 0.2,
           maxOutputTokens: 32000,
-          ...(supportsThinking && call.thinkingBudget !== undefined
+          ...(thinkingSupported && call.thinkingBudget !== undefined
             ? { thinkingConfig: { thinkingBudget: call.thinkingBudget } }
             : {}),
         },
@@ -87,6 +91,10 @@ export async function callGemini(call: GeminiCall): Promise<{ json: unknown; usa
       const status = Number(e?.status ?? e?.code ?? 0);
       const msg = String(e?.message ?? e);
       lastErr = msg;
+      if (thinkingSupported && call.thinkingBudget !== undefined && rejectsThinking(msg)) {
+        thinkingSupported = false;
+        continue; // same attempt budget, now without thinkingConfig
+      }
       const transient = status === 429 || status === 500 || status === 503 || /RESOURCE_EXHAUSTED|UNAVAILABLE|overloaded/i.test(msg);
       if (!transient || attempt === 3) {
         throw new GeminiError(msg.slice(0, 400), status === 429 || /RESOURCE_EXHAUSTED/.test(msg) ? "QUOTA" : "UPSTREAM");
