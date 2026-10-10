@@ -1,0 +1,9 @@
+BEKALAN BAHAN MAKANAN CAHAYA (SAMPLE)
+Pembekal Bahan Kedai Makan & Katering
+INVOICE No: BBMC-1188          Date: 10/09/2026
+Customer: Sambal Mak Embun
+
+Code      Description                                   Qty   Unit Price   Amount
+PAE-1K    Perisa Ayam Emas - serbuk perisa ayam 1kg       3     RM 24.00    RM 72.00
+                                                    TOTAL          RM 72.00
+Remark: Product imported. Spec sheet attached. Halal cert - ask sales rep.

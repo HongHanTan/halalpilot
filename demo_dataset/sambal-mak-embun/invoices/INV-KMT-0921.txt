@@ -1,0 +1,12 @@
+KILANG MINYAK TERATAI SDN BHD (SAMPLE)
+Bahagian Jualan Runcit & Pemborong
+TAX INVOICE                                   Invoice No: KMT/INV/2026/0921
+                                              Date      : 02-09-2026
+Bill To: SAMBAL MAK EMBUN, Kajang, Selangor
+
+No  Item Code   Description                                Qty    UOM   Amount (RM)
+1   TRT-17T     Minyak Masak Teratai (palm olein) 17kg tin  4     tin      840.00
+2   GMJ-1K      Gula Halus Manis Jaya 1kg                  20     pek       56.00
+3   GBL-1K      Garam Halus Bintang Laut 1kg                5     pek        9.50
+                                                         TOTAL RM       905.50
+Goods received in good condition: ______  (signed: Embun)

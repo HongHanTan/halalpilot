@@ -1,0 +1,447 @@
+{
+  "schema": "halalpilot/ingredient-matrix@1",
+  "as_of": "2026-10-10",
+  "rows": [
+    {
+      "ingredient_id": "P1-I01",
+      "product_id": "P1",
+      "ingredient": "cili kering",
+      "risk_level": "MEDIUM",
+      "risk_reason": "dried chilli: minimally processed",
+      "supplier_id": "S1",
+      "invoice_line_id": "L1",
+      "match_basis": "brand 'Cili Kering Maju' on invoice and cert",
+      "cert_id": "C4",
+      "cert_expiry": "2027-06-30",
+      "verdict": "VERIFIED",
+      "evidence": [
+        "DOC-012",
+        "DOC-007",
+        "DOC-004"
+      ],
+      "actions": [
+        "Verify certificate SAMPLE-HALAL-RM-00123 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P1-I02",
+      "product_id": "P1",
+      "ingredient": "bawang merah",
+      "risk_level": "LOW",
+      "risk_reason": "fresh shallots: unprocessed plant",
+      "supplier_id": "S1",
+      "invoice_line_id": "L2",
+      "match_basis": "item 'Bawang merah'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-007"
+      ],
+      "actions": [
+        "Confirm with certifier whether a declaration is needed for fresh produce"
+      ]
+    },
+    {
+      "ingredient_id": "P1-I03",
+      "product_id": "P1",
+      "ingredient": "bawang putih",
+      "risk_level": "LOW",
+      "risk_reason": "fresh garlic: unprocessed plant",
+      "supplier_id": "S1",
+      "invoice_line_id": "L3",
+      "match_basis": "item 'Bawang putih'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-007"
+      ],
+      "actions": [
+        "Confirm with certifier whether a declaration is needed for fresh produce"
+      ]
+    },
+    {
+      "ingredient_id": "P1-I04",
+      "product_id": "P1",
+      "ingredient": "belacan Pak Ali",
+      "risk_level": "MEDIUM",
+      "risk_reason": "shrimp paste: processed seafood",
+      "supplier_id": "S1",
+      "invoice_line_id": "L4",
+      "match_basis": "brand 'Belacan Pak Ali'",
+      "cert_id": "C2",
+      "cert_expiry": "2026-08-31",
+      "verdict": "EXPIRED",
+      "evidence": [
+        "DOC-012",
+        "DOC-007",
+        "DOC-002"
+      ],
+      "actions": [
+        "Request renewed certificate for Belacan Pak Ali via Syarikat Rempah Maju",
+        "Verify certificate SAMPLE-HALAL-PA-00456 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P1-I05",
+      "product_id": "P1",
+      "ingredient": "minyak masak (Sentosa)",
+      "risk_level": "MEDIUM",
+      "risk_reason": "cooking oil: processing aids",
+      "supplier_id": "S2",
+      "invoice_line_id": "L6",
+      "match_basis": "brand 'Sentosa'",
+      "cert_id": "C3",
+      "cert_expiry": "2026-11-20",
+      "verdict": "EXPIRING",
+      "evidence": [
+        "DOC-012",
+        "DOC-006",
+        "DOC-003"
+      ],
+      "actions": [
+        "Ask Pembekal Minyak Sentosa for the renewed certificate before 2026-11-20",
+        "Verify certificate SAMPLE-HALAL-MS-00789 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P1-I06",
+      "product_id": "P1",
+      "ingredient": "gula",
+      "risk_level": "MEDIUM",
+      "risk_reason": "processed packaged sugar",
+      "supplier_id": "S2",
+      "invoice_line_id": "L7",
+      "match_basis": "item 'Gula Putih Halus'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-006"
+      ],
+      "actions": [
+        "Request halal certificate for Gula Putih Halus from Pembekal Minyak Sentosa"
+      ]
+    },
+    {
+      "ingredient_id": "P1-I07",
+      "product_id": "P1",
+      "ingredient": "garam",
+      "risk_level": "MEDIUM",
+      "risk_reason": "processed packaged salt",
+      "supplier_id": "S2",
+      "invoice_line_id": "L8",
+      "match_basis": "item 'Garam halus'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-006"
+      ],
+      "actions": [
+        "Request halal certificate for Garam halus from Pembekal Minyak Sentosa"
+      ]
+    },
+    {
+      "ingredient_id": "P1-I08",
+      "product_id": "P1",
+      "ingredient": "asam jawa",
+      "risk_level": "MEDIUM",
+      "risk_reason": "tamarind: minimally processed",
+      "supplier_id": "S1",
+      "invoice_line_id": "L5",
+      "match_basis": "brand 'Maju' and cert 'Asam Jawa Maju'",
+      "cert_id": "C4",
+      "cert_expiry": "2027-06-30",
+      "verdict": "VERIFIED",
+      "evidence": [
+        "DOC-012",
+        "DOC-007",
+        "DOC-004"
+      ],
+      "actions": [
+        "Verify certificate SAMPLE-HALAL-RM-00123 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I01",
+      "product_id": "P2",
+      "ingredient": "cili kering",
+      "risk_level": "MEDIUM",
+      "risk_reason": "dried chilli: minimally processed",
+      "supplier_id": "S1",
+      "invoice_line_id": "L1",
+      "match_basis": "brand 'Cili Kering Maju' on invoice and cert",
+      "cert_id": "C4",
+      "cert_expiry": "2027-06-30",
+      "verdict": "VERIFIED",
+      "evidence": [
+        "DOC-012",
+        "DOC-007",
+        "DOC-004"
+      ],
+      "actions": [
+        "Verify certificate SAMPLE-HALAL-RM-00123 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I02",
+      "product_id": "P2",
+      "ingredient": "bawang merah",
+      "risk_level": "LOW",
+      "risk_reason": "fresh shallots: unprocessed plant",
+      "supplier_id": "S1",
+      "invoice_line_id": "L2",
+      "match_basis": "item 'Bawang merah'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-007"
+      ],
+      "actions": [
+        "Confirm with certifier whether a declaration is needed for fresh produce"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I03",
+      "product_id": "P2",
+      "ingredient": "bawang putih",
+      "risk_level": "LOW",
+      "risk_reason": "fresh garlic: unprocessed plant",
+      "supplier_id": "S1",
+      "invoice_line_id": "L3",
+      "match_basis": "item 'Bawang putih'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-007"
+      ],
+      "actions": [
+        "Confirm with certifier whether a declaration is needed for fresh produce"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I04",
+      "product_id": "P2",
+      "ingredient": "belacan Pak Ali",
+      "risk_level": "MEDIUM",
+      "risk_reason": "shrimp paste: processed seafood",
+      "supplier_id": "S1",
+      "invoice_line_id": "L4",
+      "match_basis": "brand 'Belacan Pak Ali'",
+      "cert_id": "C2",
+      "cert_expiry": "2026-08-31",
+      "verdict": "EXPIRED",
+      "evidence": [
+        "DOC-012",
+        "DOC-007",
+        "DOC-002"
+      ],
+      "actions": [
+        "Request renewed certificate for Belacan Pak Ali via Syarikat Rempah Maju",
+        "Verify certificate SAMPLE-HALAL-PA-00456 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I05",
+      "product_id": "P2",
+      "ingredient": "minyak masak (Sentosa)",
+      "risk_level": "MEDIUM",
+      "risk_reason": "cooking oil: processing aids",
+      "supplier_id": "S2",
+      "invoice_line_id": "L6",
+      "match_basis": "brand 'Sentosa'",
+      "cert_id": "C3",
+      "cert_expiry": "2026-11-20",
+      "verdict": "EXPIRING",
+      "evidence": [
+        "DOC-012",
+        "DOC-006",
+        "DOC-003"
+      ],
+      "actions": [
+        "Ask Pembekal Minyak Sentosa for the renewed certificate before 2026-11-20",
+        "Verify certificate SAMPLE-HALAL-MS-00789 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I06",
+      "product_id": "P2",
+      "ingredient": "gula",
+      "risk_level": "MEDIUM",
+      "risk_reason": "processed packaged sugar",
+      "supplier_id": "S2",
+      "invoice_line_id": "L7",
+      "match_basis": "item 'Gula Putih Halus'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-006"
+      ],
+      "actions": [
+        "Request halal certificate for Gula Putih Halus from Pembekal Minyak Sentosa"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I07",
+      "product_id": "P2",
+      "ingredient": "garam",
+      "risk_level": "MEDIUM",
+      "risk_reason": "processed packaged salt",
+      "supplier_id": "S2",
+      "invoice_line_id": "L8",
+      "match_basis": "item 'Garam halus'",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "NO_CERT",
+      "evidence": [
+        "DOC-012",
+        "DOC-006"
+      ],
+      "actions": [
+        "Request halal certificate for Garam halus from Pembekal Minyak Sentosa"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I08",
+      "product_id": "P2",
+      "ingredient": "asam jawa",
+      "risk_level": "MEDIUM",
+      "risk_reason": "tamarind: minimally processed",
+      "supplier_id": "S1",
+      "invoice_line_id": "L5",
+      "match_basis": "brand 'Maju' and cert 'Asam Jawa Maju'",
+      "cert_id": "C4",
+      "cert_expiry": "2027-06-30",
+      "verdict": "VERIFIED",
+      "evidence": [
+        "DOC-012",
+        "DOC-007",
+        "DOC-004"
+      ],
+      "actions": [
+        "Verify certificate SAMPLE-HALAL-RM-00123 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I09",
+      "product_id": "P2",
+      "ingredient": "ikan bilis",
+      "risk_level": "MEDIUM",
+      "risk_reason": "dried seafood",
+      "supplier_id": null,
+      "invoice_line_id": null,
+      "match_basis": null,
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "NEEDS_REVIEW",
+      "evidence": [
+        "DOC-013"
+      ],
+      "actions": [
+        "Buy from a supplier who issues receipts and holds a halal certificate, or keep receipts from the pasar trader"
+      ],
+      "reason": "Bought at the pasar; no invoice, no supplier, no certificate"
+    },
+    {
+      "ingredient_id": "P2-I10",
+      "product_id": "P2",
+      "ingredient": "serbuk perisa seafood (Bintang)",
+      "risk_level": "HIGH",
+      "risk_reason": "flavouring: carrier and source may be non-halal",
+      "supplier_id": "S3",
+      "invoice_line_id": "L9",
+      "match_basis": "supplier Bintang and 'Seafood flavour powder'",
+      "cert_id": "C1",
+      "cert_expiry": "2027-03-15",
+      "verdict": "MISMATCH",
+      "evidence": [
+        "DOC-013",
+        "DOC-005",
+        "DOC-001"
+      ],
+      "actions": [
+        "Ask Bintang Food Ingredients for a halal certificate covering SF-210 (cert covers SF-200)",
+        "Verify certificate SAMPLE-HALAL-BF-01011 in the official halal directory",
+        "Document is marked SAMPLE / not a real certificate; obtain the genuine certificate"
+      ]
+    },
+    {
+      "ingredient_id": "P2-I11",
+      "product_id": "P2",
+      "ingredient": "E471",
+      "risk_level": "HIGH",
+      "risk_reason": "E471 mono-/diglycerides: fat source may be animal",
+      "supplier_id": "S3",
+      "invoice_line_id": "L10",
+      "match_basis": "code 'E471' in recipe and invoice",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "NO_CERT",
+      "evidence": [
+        "DOC-013",
+        "DOC-005"
+      ],
+      "actions": [
+        "Request halal certificate and spec sheet for EM-471 from Bintang Food Ingredients",
+        "Until certified, stop using it or switch to a certified plant-based E471"
+      ]
+    }
+  ],
+  "supplier_requests": [
+    {
+      "request_id": "SR-01",
+      "supplier_id": "S1",
+      "cert_id": "C2",
+      "reason": "Belacan Pak Ali certificate expired on 2026-08-31",
+      "draft_message": "Assalamualaikum Syarikat Rempah Maju, sijil halal Belacan Pak Ali (SAMPLE-HALAL-PA-00456) yang kami ada telah tamat pada 31/08/2026. Boleh kongsikan salinan sijil yang terkini? Terima kasih."
+    },
+    {
+      "request_id": "SR-02",
+      "supplier_id": "S2",
+      "cert_id": "C3",
+      "reason": "Cooking oil certificate expires 2026-11-20; sugar and salt have no certificate",
+      "draft_message": "Assalamualaikum Pembekal Minyak Sentosa, sijil halal Minyak Masak Sentosa akan tamat pada 20/11/2026. Mohon salinan sijil yang diperbaharui, dan juga sijil halal untuk Gula Putih Halus dan Garam halus. Terima kasih."
+    },
+    {
+      "request_id": "SR-03",
+      "supplier_id": "S3",
+      "cert_id": "C1",
+      "reason": "Cert covers SF-200 but we buy SF-210; no cert for EM-471",
+      "draft_message": "Hi Bintang Food Ingredients, the halal certificate we have covers Seafood Flavour Powder SF-200, but invoice BFI-0455 is for SF-210. Could you send the halal certificate covering SF-210, plus the halal certificate and spec sheet for Emulsifier E471 (EM-471)? Thank you."
+    }
+  ],
+  "substitute_suggestions": [
+    {
+      "ingredient_id": "P2-I11",
+      "suggestion": "Source a halal-certified, plant-based E471, or test whether the recipe works without an emulsifier",
+      "status": "NEEDS_REVIEW",
+      "reason": "No certified alternative supplier is documented in the folder"
+    },
+    {
+      "ingredient_id": "P2-I10",
+      "suggestion": "Use a halal-certified seafood flavour whose certificate names the exact product code",
+      "status": "NEEDS_REVIEW",
+      "reason": "No certified alternative supplier is documented in the folder"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+*** SAMPLE - FICTIONAL DOCUMENT FOR HALALPILOT DEMO - NOT A REAL SSM RECORD ***
+SURUHANJAYA SYARIKAT MALAYSIA (SAMPLE)
+Perakuan Pendaftaran Perniagaan / Certificate of Business Registration
+
+Nama Perniagaan : SAMBAL MAK EMBUN
+No. Pendaftaran : SAMPLE-202301045678 (003456789-X)
+Jenis Perniagaan: Pengeluaran makanan - sambal dalam balang
+Alamat Perniagaan: No. 12, Jalan Demo 3/7, Taman Contoh, 43000 Kajang, Selangor (SAMPLE)
+Pemilik         : Embun binti Contoh
+Tarikh Daftar   : 15/03/2023
+Tarikh Tamat    : 14/03/2027

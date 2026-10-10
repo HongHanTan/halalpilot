@@ -1,0 +1,9 @@
+SOP-02: PENYIMPANAN BAHAN & PRODUK SIAP
+Tujuan: Mengelakkan pencemaran dan kerosakan bahan.
+
+1. Bahan kering disimpan di atas rak, sekurang-kurangnya 15 cm dari lantai.
+2. Semua bekas dilabel: nama bahan, tarikh terima.
+3. Guna sistem FIFO - bahan lama digunakan dahulu.
+4. Bahan cuci dan racun disimpan dalam almari berkunci, berasingan dari bahan makanan.
+5. Produk siap disimpan di rak produk siap, dilabel dengan nombor kelompok (batch).
+Rekod: Label bekas, Senarai stok mingguan

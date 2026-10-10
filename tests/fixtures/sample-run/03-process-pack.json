@@ -1,0 +1,302 @@
+{
+  "schema": "halalpilot/process-pack@1",
+  "flows": [
+    {
+      "product_id": "P1",
+      "steps": [
+        {
+          "step_no": 1,
+          "name": "Receiving",
+          "description": "Check each delivery against the approved ingredient list and a valid halal certificate",
+          "halal_control_point": true,
+          "control": "Reject or quarantine items without a matching valid certificate",
+          "based_on": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-007"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 2,
+          "name": "Storage",
+          "description": "Store ingredients on pallets/shelves away from household chemicals; label all containers",
+          "halal_control_point": true,
+          "control": "Dedicated food shelf; no unlabelled containers",
+          "based_on": [
+            "DOC-010"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 3,
+          "name": "Preparation",
+          "description": "Soak chillies; blend all base ingredients",
+          "halal_control_point": false,
+          "control": null,
+          "based_on": [
+            "DOC-012"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 4,
+          "name": "Cooking",
+          "description": "Saute on low heat about 2 hours until the oil separates",
+          "halal_control_point": false,
+          "control": null,
+          "based_on": [
+            "DOC-012"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 5,
+          "name": "Jar sterilisation",
+          "description": null,
+          "halal_control_point": false,
+          "control": null,
+          "based_on": [],
+          "status": "NEEDS_REVIEW",
+          "reason": "No document says how jars are cleaned or sterilised; photo only shows jars drying by the stove"
+        },
+        {
+          "step_no": 6,
+          "name": "Cooling and filling",
+          "description": "Cool, fill 250g jars, close and label",
+          "halal_control_point": true,
+          "control": "No halal logo on labels until certified",
+          "based_on": [
+            "DOC-012"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        }
+      ]
+    },
+    {
+      "product_id": "P2",
+      "steps": [
+        {
+          "step_no": 1,
+          "name": "Receiving",
+          "description": "Check each delivery against the approved ingredient list and a valid halal certificate",
+          "halal_control_point": true,
+          "control": "Reject or quarantine items without a matching valid certificate",
+          "based_on": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-007"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 2,
+          "name": "Storage",
+          "description": "Store ingredients on pallets/shelves away from household chemicals; label all containers",
+          "halal_control_point": true,
+          "control": "Dedicated food shelf; no unlabelled containers",
+          "based_on": [
+            "DOC-010"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 3,
+          "name": "Preparation",
+          "description": "Soak chillies; blend all base ingredients; fry ikan bilis separately and add last",
+          "halal_control_point": true,
+          "control": "Use only E471 and flavouring with a matching valid certificate",
+          "based_on": [
+            "DOC-013"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 4,
+          "name": "Cooking",
+          "description": "Saute on low heat about 2 hours until the oil separates",
+          "halal_control_point": false,
+          "control": null,
+          "based_on": [
+            "DOC-012"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 5,
+          "name": "Jar sterilisation",
+          "description": null,
+          "halal_control_point": false,
+          "control": null,
+          "based_on": [],
+          "status": "NEEDS_REVIEW",
+          "reason": "No document says how jars are cleaned or sterilised; photo only shows jars drying by the stove"
+        },
+        {
+          "step_no": 6,
+          "name": "Cooling and filling",
+          "description": "Cool, fill 250g jars, close and label",
+          "halal_control_point": true,
+          "control": "No halal logo on labels until certified",
+          "based_on": [
+            "DOC-012"
+          ],
+          "status": "DRAFT_FOR_OWNER"
+        }
+      ]
+    }
+  ],
+  "procedures": [
+    {
+      "sop_id": "SOP-01",
+      "title": "Receiving and storage of ingredients",
+      "purpose": "Only certified ingredients enter the kitchen",
+      "steps": [
+        "Check every delivery against the approved ingredient list",
+        "Check the halal certificate covers the exact product and is not expired",
+        "Label and date every container",
+        "Store food on the food shelf only; chemicals on a separate shelf"
+      ],
+      "records": [
+        "Receiving log"
+      ],
+      "based_on": [
+        "DOC-010"
+      ],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-02",
+      "title": "Cleaning and sanitation",
+      "purpose": "Clean equipment and premises",
+      "steps": [
+        "Wash wok, blender and table after each batch",
+        "Display a hand-wash sign at the sink",
+        "Follow a weekly cleaning schedule posted on the wall"
+      ],
+      "records": [
+        "Cleaning schedule"
+      ],
+      "based_on": [
+        "DOC-009"
+      ],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-03",
+      "title": "Preventing contamination",
+      "purpose": "Keep non-halal and non-food items away from production",
+      "steps": [
+        "Do not bring any non-halal food into the production kitchen",
+        "Keep detergents and household items in a separate cupboard",
+        "Identify and label or remove any unlabelled container"
+      ],
+      "records": [],
+      "based_on": [
+        "DOC-010"
+      ],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-04",
+      "title": "Traceability",
+      "purpose": "Trace each jar back to its ingredient purchases",
+      "steps": [
+        "Write a batch number on each jar",
+        "Record the invoices used for each batch",
+        "Keep receipts for every market purchase"
+      ],
+      "records": [
+        "Batch log"
+      ],
+      "based_on": [],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-05",
+      "title": "Certificate expiry control",
+      "purpose": "Never use an ingredient with an expired certificate",
+      "steps": [
+        "Keep a list of supplier certificates and expiry dates",
+        "Ask the supplier for renewal 90 days before expiry",
+        "Stop using the ingredient if the certificate lapses"
+      ],
+      "records": [
+        "Certificate register"
+      ],
+      "based_on": [],
+      "status": "DRAFT_FOR_OWNER"
+    }
+  ],
+  "halal_policy_draft": {
+    "text": "Kedai Sambal Contoh commits to producing only halal food. We use only ingredients with valid halal certification, keep our kitchen free of non-halal materials, keep records for every batch, and train everyone who handles our food.",
+    "status": "DRAFT_FOR_OWNER"
+  },
+  "missing_documents": [
+    {
+      "md_id": "MD-01",
+      "checklist_id": "D01",
+      "document": "Business registration (SSM)",
+      "reason": "Owner note says SSM exists but no copy is in the folder",
+      "owner_action": "Upload a copy of the SSM certificate",
+      "blocking": true,
+      "status": "NEEDS_REVIEW",
+      "source": "DOC-008"
+    },
+    {
+      "md_id": "MD-02",
+      "checklist_id": "D02",
+      "document": "Premise licence / local-authority permit",
+      "reason": "Not in folder; home-based kitchen",
+      "owner_action": "Check with the local council what permit a home kitchen needs and upload it",
+      "blocking": true,
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-03",
+      "checklist_id": "D07",
+      "document": "Premise layout / floor plan",
+      "reason": "Not in folder",
+      "owner_action": "Draw a simple plan of the kitchen and store room",
+      "blocking": true,
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-04",
+      "checklist_id": "D08",
+      "document": "Typhoid vaccination records",
+      "reason": "Owner note: owner not vaccinated, sister unsure; no records",
+      "owner_action": "Both handlers get typhoid vaccination and upload the cards",
+      "blocking": true,
+      "status": "NEEDS_REVIEW",
+      "source": "DOC-008"
+    },
+    {
+      "md_id": "MD-05",
+      "checklist_id": "D09",
+      "document": "Food handler training certificates",
+      "reason": "Not in folder",
+      "owner_action": "Attend a food handler course and upload certificates",
+      "blocking": true,
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-06",
+      "checklist_id": "D10",
+      "document": "Pest-control record",
+      "reason": "Not in folder",
+      "owner_action": "Arrange pest control and keep the service record",
+      "blocking": true,
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-07",
+      "checklist_id": "D15",
+      "document": "Product label artwork",
+      "reason": "Not in folder",
+      "owner_action": "Upload current jar labels (no halal logo yet)",
+      "blocking": false,
+      "status": "NEEDS_REVIEW"
+    }
+  ]
+}

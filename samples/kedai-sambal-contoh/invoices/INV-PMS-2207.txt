@@ -1,0 +1,8 @@
+PEMBEKAL MINYAK SENTOSA (SAMPLE)
+Tax Invoice PMS-2207      Date 2026-09-20
+Bill to: Kedai Sambal Contoh
+
+1  Minyak Masak Sentosa 17kg tin (palm olein)   x2   RM 210.00
+2  Gula Putih Halus 1kg                         x10  RM  28.50
+3  Garam halus 1kg                              x2   RM   3.60
+Total RM 242.10

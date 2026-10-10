@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "as_of": "2026-10-10",
+  "expiry_warning_days": 90,
+  "errors": [],
+  "errors_by_owner": {
+    "halalpilot-evidence-clerk": 0,
+    "halalpilot-ingredient-investigator": 0,
+    "halalpilot-mock-auditor": 0,
+    "halalpilot-process-builder": 0
+  },
+  "warnings": [],
+  "readiness": {
+    "status": "NOT_READY",
+    "score": 75,
+    "components": {
+      "ingredients": 0.618,
+      "process_steps": 0.857,
+      "documents": 1.0
+    },
+    "verdict_counts": {
+      "LOW_RISK_NO_CERT": 5,
+      "VERIFIED": 8,
+      "EXPIRED": 2,
+      "MISMATCH": 1,
+      "NO_CERT": 1
+    },
+    "blockers": {
+      "total": 7,
+      "ingredients": [
+        "P1-I03",
+        "P2-I02",
+        "P2-I04",
+        "P2-I09"
+      ],
+      "blocking_missing_documents": 0,
+      "open_critical_findings": [
+        "F-01",
+        "F-02",
+        "F-03"
+      ]
+    },
+    "formula": "100 * (0.6*ingredients + 0.15*process_steps + 0.25*documents); ingredient weights VERIFIED=1, EXPIRING=0.75, LOW_RISK_NO_CERT=0.5, other=0; documents = 1 - blocking_missing/10"
+  }
+}

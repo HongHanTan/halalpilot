@@ -1,0 +1,294 @@
+{
+  "schema": "halalpilot/process-pack@1",
+  "flows": [
+    {
+      "product_id": "P1",
+      "steps": [
+        {
+          "step_no": 1,
+          "name": "Receiving",
+          "description": "Receive incoming ingredients for Sambal Bawang Garing: shallots, cooking oil (Minyak Masak Teratai), dried chilli (Cili Kering Seri Wangi), sugar (Gula halus Manis Jaya), garlic, tamarind (Asam jawa Cap Pokok) and salt (Garam Bintang Laut). Check each delivery against the invoice for item, brand, code and quantity, inspect packaging condition, and record in the Receiving Log.",
+          "halal_control_point": true,
+          "control": "Check the halal certificate or logo on every delivery against the approved ingredient list; reject any ingredient with an expired, mismatched or missing certificate before it enters the store.",
+          "based_on": ["DOC-026", "DOC-018", "DOC-011", "DOC-013"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 2,
+          "name": "Storage",
+          "description": "Store dry ingredients on racks at least 15 cm off the floor in the dry store; label every container with ingredient name and receive date; apply FIFO; keep cleaning chemicals and non-food items in the locked 'BAHAN CUCI' cabinet, separate from food.",
+          "halal_control_point": true,
+          "control": "Segregate halal-certified ingredients from any non-certified or pending items; store high-risk and allergen ingredients so they cannot cross-contaminate other batches.",
+          "based_on": ["DOC-019", "DOC-016", "DOC-002"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 3,
+          "name": "Preparation",
+          "description": "Slice shallots thinly; deseed and soak dried chilli in hot water for 30 minutes; peel garlic; dissolve tamarind in water and strain. Use clean, halal-dedicated utensils and the stainless steel table and blenders in the preparation area.",
+          "halal_control_point": true,
+          "control": "Verify the identity and certificate status of each ingredient before use, especially the dried chilli (Cili Kering Seri Wangi) whose certificate must be valid; use only cleaned equipment to avoid cross-contamination.",
+          "based_on": ["DOC-026"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 4,
+          "name": "Cooking",
+          "description": "Fry sliced shallots in oil until crispy, remove and drain; grind dried chilli and garlic; saute the ground paste in the remaining oil over low heat for 60-75 minutes until the oil separates; add tamarind water, sugar and salt and cook 15 minutes; turn off the heat and fold in the crispy shallots.",
+          "halal_control_point": false,
+          "control": null,
+          "based_on": ["DOC-026"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 5,
+          "name": "Filling and packing",
+          "description": "Hot-fill the cooked sambal into jars, seal immediately and invert for 5 minutes.",
+          "halal_control_point": true,
+          "control": "Use only jars that have been cleaned and sterilised by an approved method; prevent cross-contamination of the hot product during filling.",
+          "based_on": ["DOC-026"],
+          "status": "NEEDS_REVIEW",
+          "reason": "The recipe (DOC-026) states 'balang yang telah disteril' (sterilised jars) but does not document the jar sterilisation method, validation or record; confirm and record the method the owner uses."
+        },
+        {
+          "step_no": 6,
+          "name": "Labelling",
+          "description": "Apply the Sambal Bawang Garing jar label showing ingredients, net weight (200g), expiry and maker details.",
+          "halal_control_point": true,
+          "control": "Ensure labels carry no halal logo before certification is granted; verify the ingredient list, batch code and allergen statement match the product specification.",
+          "based_on": ["DOC-022", "DOC-024"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 7,
+          "name": "Storage and dispatch",
+          "description": "Store finished jars on the dedicated finished-product rack labelled with the batch number; dispatch from the side door.",
+          "halal_control_point": true,
+          "control": "Keep finished products separate from raw materials and cleaning chemicals; maintain a dispatch log linking each outgoing batch to its batch number.",
+          "based_on": ["DOC-019", "DOC-016", "DOC-002"],
+          "status": "DRAFT_FOR_OWNER"
+        }
+      ]
+    },
+    {
+      "product_id": "P2",
+      "steps": [
+        {
+          "step_no": 1,
+          "name": "Receiving",
+          "description": "Receive incoming ingredients for Sambal Udang Kering: shallots, dried shrimp (Udang kering), cooking oil, dried chilli, sugar, lemongrass (Serai), garlic, tamarind, chicken flavour powder (Perisa Ayam Emas) and salt. Check each delivery against the invoice and record in the Receiving Log.",
+          "halal_control_point": true,
+          "control": "Check the halal certificate for every delivery; reject high-risk ingredients (dried shrimp, chicken flavour powder/flavouring) that arrive without a valid, matching certificate.",
+          "based_on": ["DOC-027", "DOC-018", "DOC-010", "DOC-012", "DOC-013"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 2,
+          "name": "Storage",
+          "description": "Store ingredients in labelled containers on racks in the dry store; apply FIFO; keep the chicken flavour powder and dried shrimp segregated; keep cleaning chemicals in the locked 'BAHAN CUCI' cabinet.",
+          "halal_control_point": true,
+          "control": "Segregate certified from non-certified or pending ingredients; store the high-risk flavouring so it cannot cross-contaminate other materials.",
+          "based_on": ["DOC-019", "DOC-016", "DOC-002"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 3,
+          "name": "Preparation",
+          "description": "Soak dried shrimp for 15 minutes, drain and pound coarsely; grind shallots, garlic, lemongrass and dried chilli.",
+          "halal_control_point": true,
+          "control": "Before use, verify the halal certificate of the chicken flavour powder (Perisa Ayam Emas, a HIGH-risk flavouring) and the dried shrimp; do not prepare any high-risk ingredient whose status is unresolved; use only cleaned, halal-dedicated equipment.",
+          "based_on": ["DOC-027"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 4,
+          "name": "Cooking",
+          "description": "Saute the ground paste over low heat for 60 minutes until the oil separates; add dried shrimp and cook 20 minutes stirring; add tamarind water, sugar, salt and chicken flavour powder and cook 10 minutes.",
+          "halal_control_point": true,
+          "control": "Do not add the chicken flavour powder (or any ingredient) whose halal status is unresolved; record the batch number and the ingredient lot references used.",
+          "based_on": ["DOC-027"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 5,
+          "name": "Filling and packing",
+          "description": "Hot-fill the cooked sambal into jars and seal immediately.",
+          "halal_control_point": true,
+          "control": "Use only jars that have been cleaned and sterilised by an approved method; prevent cross-contamination of the hot product during filling.",
+          "based_on": ["DOC-027"],
+          "status": "NEEDS_REVIEW",
+          "reason": "The recipe (DOC-027) states 'balang yang telah disteril' (sterilised jars) but does not document the jar sterilisation method, validation or record; confirm and record the method the owner uses."
+        },
+        {
+          "step_no": 6,
+          "name": "Labelling",
+          "description": "Apply the Sambal Udang Kering jar label showing ingredients, net weight (200g), expiry, maker details and the crustacean allergen statement.",
+          "halal_control_point": true,
+          "control": "Ensure labels carry no halal logo before certification is granted; verify the ingredient list, batch code and the crustacean (udang) allergen statement match the product specification.",
+          "based_on": ["DOC-023", "DOC-025"],
+          "status": "DRAFT_FOR_OWNER"
+        },
+        {
+          "step_no": 7,
+          "name": "Storage and dispatch",
+          "description": "Store finished jars on the dedicated finished-product rack labelled with the batch number; dispatch from the side door.",
+          "halal_control_point": true,
+          "control": "Keep finished products separate from raw materials and cleaning chemicals; maintain a dispatch log linking each outgoing batch to its batch number.",
+          "based_on": ["DOC-019", "DOC-016", "DOC-002"],
+          "status": "DRAFT_FOR_OWNER"
+        }
+      ]
+    }
+  ],
+  "procedures": [
+    {
+      "sop_id": "SOP-01",
+      "title": "Receiving and storage of ingredients",
+      "purpose": "Ensure only halal-approved ingredients enter the premises and are stored without contamination.",
+      "steps": [
+        "Check the delivery against the invoice for item, brand, code and quantity.",
+        "Inspect packaging for damage, leaks, insects or contamination; reject any delivery that fails.",
+        "Check the halal certificate or logo on the delivery against the approved ingredient list; reject any ingredient with an expired, mismatched or missing certificate.",
+        "Record in the Receiving Log (Buku Log Penerimaan): date, supplier, item, code, quantity, certificate reference and receiver name.",
+        "Place certified ingredients on clean, dry racks at least 15 cm off the floor; label every container with ingredient name and receive date.",
+        "Quarantine any non-certified or pending ingredient in a clearly marked area until its status is resolved.",
+        "Apply FIFO so older stock is used first; keep the weekly stock list (Senarai stok mingguan) up to date.",
+        "Keep cleaning chemicals and non-food items in the locked 'BAHAN CUCI' cabinet only, separate from food."
+      ],
+      "records": ["Buku Log Penerimaan (Receiving Log)", "Senarai stok mingguan (Weekly stock list)", "Approved Supplier List"],
+      "based_on": ["DOC-018", "DOC-019", "DOC-016"],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-02",
+      "title": "Cleaning and sanitation of equipment and premises",
+      "purpose": "Prevent contamination and maintain a hygienic production environment.",
+      "steps": [
+        "After each batch, clean all equipment, tables, the woks, blenders and utensils with food-safe detergent and rinse with potable water.",
+        "Sanitise food-contact surfaces with an approved food-grade sanitiser and allow to air dry.",
+        "Clean floors, drains and the sink area daily; remove food residues and standing water.",
+        "Post a Cleaning Schedule on the wall and record each task with date, time and staff initials.",
+        "Store all cleaning chemicals in the locked 'BAHAN CUCI' cabinet only; never leave them in the production or storage areas."
+      ],
+      "records": ["Cleaning Schedule", "Cleaning Log"],
+      "based_on": ["DOC-017", "DOC-015", "DOC-016"],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-03",
+      "title": "Preventing contamination with non-halal and non-food items",
+      "purpose": "Protect halal integrity from raw materials through to finished product.",
+      "steps": [
+        "Use separate utensils and containers for halal-certified and non-certified or pending ingredients until the non-certified item is resolved.",
+        "Do not process non-halal or unresolved ingredients on the same equipment at the same time as halal products.",
+        "Clean and sanitise all equipment between processing different products or batches.",
+        "Prohibit bringing non-halal food, alcohol or unauthorised materials into the production area.",
+        "Keep all cleaning chemicals, pest-control baits and non-food items in the locked 'BAHAN CUCI' cabinet, separate from food.",
+        "Train all staff to recognise high-risk ingredients and to report any contamination concern immediately."
+      ],
+      "records": ["Cross-contamination risk review", "Staff training attendance record"],
+      "based_on": ["DOC-016", "DOC-019", "DOC-015"],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-04",
+      "title": "Traceability and record-keeping",
+      "purpose": "Trace every batch of product back to its ingredients, suppliers and certificates.",
+      "steps": [
+        "Assign a unique batch number to every production batch at the start of cooking.",
+        "Record on the Production Record: batch number, product, quantity, date and staff names.",
+        "Record the supplier, invoice number, certificate number and ingredient lot for every ingredient used in the batch.",
+        "Link every jar label to the production batch number.",
+        "Keep all receiving logs, production records, stock lists and certificates for at least the period required by the certifying authority."
+      ],
+      "records": ["Production Record", "Ingredient Usage Log", "Buku Log Penerimaan"],
+      "based_on": ["DOC-018", "DOC-019", "DOC-022", "DOC-023", "DOC-024", "DOC-025"],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-05",
+      "title": "Handling an ingredient whose certificate expires",
+      "purpose": "Ensure only ingredients with valid halal certificates are used.",
+      "steps": [
+        "Maintain a Certificate Expiry List showing the expiry date of every certified ingredient.",
+        "Review the list at least monthly and flag any certificate expiring within 90 days.",
+        "Contact the supplier for a renewed certificate before the expiry date.",
+        "If a renewed certificate is not received by the expiry date, place the ingredient in quarantine and do not use it until valid evidence is obtained.",
+        "Update the Approved Supplier List once the renewed certificate is verified."
+      ],
+      "records": ["Certificate Expiry List", "Quarantine Log", "Supplier correspondence file"],
+      "based_on": ["DOC-018", "DOC-008"],
+      "status": "DRAFT_FOR_OWNER"
+    },
+    {
+      "sop_id": "SOP-06",
+      "title": "Pest control",
+      "purpose": "Prevent pests from entering and contaminating the production premises.",
+      "steps": [
+        "Keep doors and windows fitted with mesh screens; keep doors closed at all times.",
+        "Maintain mouse traps at the four corners of the premises and inspect them weekly.",
+        "Dispose of food waste daily in covered bins.",
+        "Engage a licensed pest-control company for treatment every three months and keep the service report on file."
+      ],
+      "records": ["Trap inspection log", "Pest-control service report"],
+      "based_on": ["DOC-020", "DOC-021"],
+      "status": "DRAFT_FOR_OWNER"
+    }
+  ],
+  "halal_policy_draft": {
+    "text": "Sambal Mak Embun is committed to producing only halal products. We shall use only halal-certified or certifying-authority-approved ingredients, verified at receiving against valid certificates, and reject any ingredient whose halal status cannot be confirmed. We shall prevent cross-contamination with non-halal or non-food substances by segregating ingredients, dedicating equipment, and locking cleaning chemicals away from food. We shall maintain complete traceability records linking every batch to its ingredients, suppliers and certificates, and ensure all staff follow these approved halal procedures. This policy, signed by the owner, applies to all products, premises, equipment and personnel involved in production.",
+    "status": "DRAFT_FOR_OWNER"
+  },
+  "missing_documents": [
+    {
+      "md_id": "MD-01",
+      "checklist_id": "D11",
+      "document": "Cleaning and sanitation procedure / schedule",
+      "reason": "The SOP register (DOC-017) lists SOP-03 Pembersihan & sanitasi peralatan dan premis, but the procedure document is not present in the folder; the draft above is provided for the owner to adopt.",
+      "owner_action": "Adopt and post the drafted cleaning and sanitation SOP; maintain a posted Cleaning Schedule and a Cleaning Log.",
+      "blocking": false,
+      "source": "DOC-017",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-02",
+      "checklist_id": "D12",
+      "document": "Halal policy statement signed by the owner",
+      "reason": "No signed halal policy statement is in the folder; the draft above is unsigned.",
+      "owner_action": "Review, sign and date the drafted halal policy and keep the signed copy in the halal file.",
+      "blocking": false,
+      "source": null,
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-03",
+      "checklist_id": "D13",
+      "document": "Internal halal control / person responsible for halal",
+      "reason": "No appointment or role description for an internal halal coordinator is in the folder.",
+      "owner_action": "Appoint a staff member as internal halal coordinator and document the appointment and responsibilities; confirm with the certifying authority whether this is required for the business size.",
+      "blocking": false,
+      "source": null,
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-04",
+      "checklist_id": "D14",
+      "document": "Muslim worker details, if required for the category",
+      "reason": "The food-handler record (DOC-028) states all workers are Muslim, but a formal Muslim-worker details list is not in the folder; confirm with the certifying authority whether a separate record is required.",
+      "owner_action": "Confirm with the certifying authority whether a formal Muslim-worker details record is required; if so, prepare it from the food-handler record.",
+      "blocking": false,
+      "source": "DOC-028",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "md_id": "MD-05",
+      "checklist_id": "D16",
+      "document": "Traceability: receiving and storage records",
+      "reason": "SOP-01 (DOC-018) references a Buku Log Penerimaan and SOP-02 (DOC-019) references a Senarai stok mingguan, but the actual record templates or completed records are not in the folder.",
+      "owner_action": "Create and maintain the Receiving Log and weekly stock list templates referenced in the SOPs; retain completed records for the period required by the certifying authority.",
+      "blocking": false,
+      "source": "DOC-018",
+      "status": "NEEDS_REVIEW"
+    }
+  ]
+}

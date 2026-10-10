@@ -1,0 +1,9 @@
+BINTANG FOOD INGREDIENTS (SAMPLE)
+INVOICE BFI-0455    05 Sep 2026
+Customer: Kedai Sambal Contoh
+
+Code     Description                                   Qty   Amount
+SF-210   Seafood flavour powder 500g                   2     RM 46.00
+EM-471   Emulsifier E471 (mono- & diglycerides) 1kg    1     RM 38.00
+                                              TOTAL   RM 84.00
+Note: origin of E471 - imported, see spec sheet (not attached)

@@ -1,0 +1,73 @@
+{
+  "schema": "halalpilot/audit-report@1",
+  "round": 1,
+  "verdict": "PASS",
+  "findings": [
+    {
+      "finding_id": "F-01",
+      "severity": "CRITICAL",
+      "category": "certificate",
+      "target": "02-ingredient-matrix.json#/rows/P1-I03 and P2-I04",
+      "issue": "Cili kering Seri Wangi halal certificate SAMPLE-JAKIM-SW-1021-0457 expired on 2026-07-31, but invoice SW-26-0815 dated 2026-08-18 shows the chilli was purchased after the certificate expired",
+      "evidence": ["DOC-008", "DOC-013"],
+      "required_fix": "Obtain a renewed halal certificate from Syarikat Rempah Seri Wangi that covers Cili Kering Seri Wangi and is valid for the purchase date; do not use the ingredient until the certificate is valid",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-02",
+      "severity": "CRITICAL",
+      "category": "traceability",
+      "target": "02-ingredient-matrix.json#/rows/P2-I02",
+      "issue": "Udang kering was purchased from Pemborong Hasil Laut Kuala as bulk unbranded product, but the only shrimp certificate in the folder belongs to Syarikat Makanan Laut Pantai Timur for its own branded packs; supplier, holder and product form do not match",
+      "evidence": ["DOC-009", "DOC-012"],
+      "required_fix": "Either obtain a halal certificate from Pemborong Hasil Laut Kuala that specifically covers the bulk udang kering purchased, or switch to buying the certified Pantai Timur branded product with a matching invoice",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-03",
+      "severity": "CRITICAL",
+      "category": "risk-ingredient",
+      "target": "02-ingredient-matrix.json#/rows/P2-I09",
+      "issue": "Perisa Ayam Emas chicken flavour powder contains chicken fat, chicken powder and flavouring (high-risk, meat-derived and possible alcohol carrier) but no halal certificate or manufacturer/country details are in the folder",
+      "evidence": ["DOC-010", "DOC-014"],
+      "required_fix": "Obtain a halal certificate covering Perisa Ayam Emas from the manufacturer (not just the distributor) that addresses slaughter and processing; or replace with a halal-certified alternative before certification",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-04",
+      "severity": "MAJOR",
+      "category": "procedure",
+      "target": "03-process-pack.json#/missing_documents/MD-01",
+      "issue": "SOP-03 Pembersihan & sanitasi is listed in SENARAI-SOP but the actual SOP-03 file is missing from the procedures folder; only SOP-01, SOP-02 and SOP-04 are present and photographed on the wall",
+      "evidence": ["DOC-017", "DOC-015"],
+      "required_fix": "Create, approve and post the SOP-03 cleaning and sanitation file; adopt the draft provided in the process pack",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-05",
+      "severity": "MINOR",
+      "category": "documentation",
+      "target": "03-process-pack.json#/halal_policy_draft and missing_documents/MD-02, MD-03",
+      "issue": "Halal policy statement is drafted but not signed by the owner, and no internal halal coordinator has been appointed",
+      "evidence": ["DOC-003"],
+      "required_fix": "Sign the halal policy and formally appoint an internal halal coordinator with documented responsibilities",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    }
+  ],
+  "strengths": [
+    "Business registration, premise licence, premise layout, food-handler typhoid/training records and pest-control records are all present and organised.",
+    "Ingredient matrix correctly identifies the expired chilli certificate, the shrimp supplier/certificate mismatch and the uncertified chicken flavour powder without softening any verdict.",
+    "Existing SOP-01, SOP-02 and SOP-04 are documented and visibly posted in the production kitchen.",
+    "Product labels correctly omit any halal logo before certification is granted."
+  ]
+}

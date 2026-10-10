@@ -1,0 +1,100 @@
+{
+  "schema": "halalpilot/audit-report@1",
+  "round": 2,
+  "verdict": "PASS",
+  "findings": [
+    {
+      "finding_id": "F-01",
+      "severity": "CRITICAL",
+      "category": "risk-ingredient",
+      "target": "02-ingredient-matrix.json#/rows/18",
+      "issue": "E471 has no halal certificate and an unknown fat source",
+      "evidence": [
+        "DOC-005",
+        "DOC-013"
+      ],
+      "required_fix": "Obtain certificate and spec sheet, or remove E471",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-02",
+      "severity": "CRITICAL",
+      "category": "certificate",
+      "target": "02-ingredient-matrix.json#/rows/3",
+      "issue": "Belacan certificate expired 2026-08-31",
+      "evidence": [
+        "DOC-002"
+      ],
+      "required_fix": "Obtain renewed certificate",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-03",
+      "severity": "MAJOR",
+      "category": "certificate",
+      "target": "02-ingredient-matrix.json#/rows/17",
+      "issue": "Flavour certificate covers SF-200; invoice is SF-210",
+      "evidence": [
+        "DOC-001",
+        "DOC-005"
+      ],
+      "required_fix": "Obtain certificate covering SF-210",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-04",
+      "severity": "MAJOR",
+      "category": "cross-contamination",
+      "target": "03-process-pack.json#/procedures",
+      "issue": "Round 1: no procedure addressed detergent stored with food (O8)",
+      "evidence": [
+        "DOC-010"
+      ],
+      "required_fix": "Add a segregation step",
+      "owner": "halalpilot-process-builder",
+      "fixable_by_team": true,
+      "status": "RESOLVED"
+    },
+    {
+      "finding_id": "F-05",
+      "severity": "MAJOR",
+      "category": "traceability",
+      "target": "02-ingredient-matrix.json#/rows/16",
+      "issue": "Ikan bilis has no purchase record",
+      "evidence": [
+        "DOC-013"
+      ],
+      "required_fix": "Keep receipts or change supplier",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    },
+    {
+      "finding_id": "F-06",
+      "severity": "MINOR",
+      "category": "documentation",
+      "target": "01-case-manifest.json#/certificates",
+      "issue": "All certificates are marked SAMPLE / not genuine",
+      "evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-003",
+        "DOC-004"
+      ],
+      "required_fix": "Replace with genuine certificates verified in the official directory",
+      "owner": "owner",
+      "fixable_by_team": false,
+      "status": "OWNER_ACTION"
+    }
+  ],
+  "strengths": [
+    "Every ingredient traced to a recipe; most to an invoice",
+    "Gaps labelled rather than guessed"
+  ]
+}

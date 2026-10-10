@@ -1,0 +1,331 @@
+{
+  "schema": "halalpilot/ingredient-matrix@1",
+  "as_of": "2026-10-10",
+  "rows": [
+    {
+      "ingredient_id": "P1-I01",
+      "product_id": "P1",
+      "ingredient": "Bawang merah",
+      "risk_level": "LOW",
+      "risk_reason": "Matches risk-ingredients.md row 'fresh vegetables, fresh fruit, fresh chilli, shallots, garlic, plain water | LOW | Unprocessed plant material'. Bawang merah (shallots) is fresh unprocessed produce.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L7",
+      "match_basis": "Recipe 'Bawang merah' matches invoice L7 'Bawang merah India' on item name (Seri Wangi invoice DOC-013).",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": ["DOC-026", "DOC-013"],
+      "actions": ["Confirm with the certifying authority whether a halal declaration is required for fresh shallots (bawang merah)."]
+    },
+    {
+      "ingredient_id": "P1-I02",
+      "product_id": "P1",
+      "ingredient": "Minyak Masak Teratai",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'cooking oil, palm olein | MEDIUM | Processing aids and refining; a cert is normally available'.",
+      "supplier_id": "S2",
+      "invoice_line_id": "L2",
+      "match_basis": "Recipe 'Minyak Masak Teratai' matches invoice L2 'Minyak Masak Teratai (palm olein) 17kg tin' on brand 'Teratai' and item name (Kilang Minyak Teratai invoice DOC-011).",
+      "cert_id": "C4",
+      "cert_expiry": "2027-09-30",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-026", "DOC-011", "DOC-007"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-KMT-1102-1180 in the official halal directory.",
+        "Certificate DOC-007 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Kilang Minyak Teratai Sdn Bhd."
+      ]
+    },
+    {
+      "ingredient_id": "P1-I03",
+      "product_id": "P1",
+      "ingredient": "Cili kering Seri Wangi",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'dried chilli, tamarind (single-ingredient, no additives) | MEDIUM | Minimally processed; additives possible'.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L6",
+      "match_basis": "Recipe 'Cili kering Seri Wangi' matches invoice L6 'Cili kering kerinting (buang tangkai)' brand 'Seri Wangi' (Seri Wangi invoice DOC-013).",
+      "cert_id": "C5",
+      "cert_expiry": "2026-07-31",
+      "verdict": "EXPIRED",
+      "evidence": ["DOC-026", "DOC-013", "DOC-008"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-SW-1021-0457 in the official halal directory.",
+        "Certificate DOC-008 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Syarikat Rempah Seri Wangi.",
+        "Request a renewed halal certificate from Syarikat Rempah Seri Wangi — certificate C5 expired on 2026-07-31."
+      ]
+    },
+    {
+      "ingredient_id": "P1-I04",
+      "product_id": "P1",
+      "ingredient": "Gula halus Manis Jaya",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'sugar, salt, flour, spices (processed, packaged) | MEDIUM | Processing aids, anti-caking agents'.",
+      "supplier_id": "S2",
+      "invoice_line_id": "L3",
+      "match_basis": "Recipe 'Gula halus Manis Jaya' matches invoice L3 'Gula Halus Manis Jaya 1kg' code GMJ-1K on item name and product code (Kilang Minyak Teratai invoice DOC-011).",
+      "cert_id": "C3",
+      "cert_expiry": "2027-12-31",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-026", "DOC-011", "DOC-006"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-GMJ-0911-0032 in the official halal directory.",
+        "Certificate DOC-006 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Kilang Gula Manis Jaya Berhad (brand owner)."
+      ]
+    },
+    {
+      "ingredient_id": "P1-I05",
+      "product_id": "P1",
+      "ingredient": "Bawang putih",
+      "risk_level": "LOW",
+      "risk_reason": "Matches risk-ingredients.md row 'fresh vegetables, fresh fruit, fresh chilli, shallots, garlic, plain water | LOW | Unprocessed plant material'. Bawang putih (garlic) is fresh unprocessed produce.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L8",
+      "match_basis": "Recipe 'Bawang putih' matches invoice L8 'Bawang putih China' on item name (Seri Wangi invoice DOC-013).",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": ["DOC-026", "DOC-013"],
+      "actions": ["Confirm with the certifying authority whether a halal declaration is required for fresh garlic (bawang putih)."]
+    },
+    {
+      "ingredient_id": "P1-I06",
+      "product_id": "P1",
+      "ingredient": "Asam jawa Cap Pokok",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'dried chilli, tamarind (single-ingredient, no additives) | MEDIUM | Minimally processed; additives possible'.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L9",
+      "match_basis": "Recipe 'Asam jawa Cap Pokok' matches invoice L9 'Asam jawa blok 500g' brand 'Cap Pokok' on brand and item name (Seri Wangi invoice DOC-013).",
+      "cert_id": "C1",
+      "cert_expiry": "2027-05-31",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-026", "DOC-013", "DOC-004"],
+      "actions": [
+        "Verify certificate SAMPLE-JAIN-ACP-0715-0088 in the official halal directory.",
+        "Certificate DOC-004 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Perusahaan Asam Cap Pokok (brand owner)."
+      ]
+    },
+    {
+      "ingredient_id": "P1-I07",
+      "product_id": "P1",
+      "ingredient": "Garam Bintang Laut",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'sugar, salt, flour, spices (processed, packaged) | MEDIUM | Processing aids, anti-caking agents'.",
+      "supplier_id": "S2",
+      "invoice_line_id": "L4",
+      "match_basis": "Recipe 'Garam Bintang Laut' matches invoice L4 'Garam Halus Bintang Laut 1kg' code GBL-1K on item name and product code (Kilang Minyak Teratai invoice DOC-011).",
+      "cert_id": "C2",
+      "cert_expiry": "2028-02-28",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-026", "DOC-011", "DOC-005"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-BLS-0809-0210 in the official halal directory.",
+        "Certificate DOC-005 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Bintang Laut Salt Industries Sdn Bhd (brand owner)."
+      ]
+    },
+    {
+      "ingredient_id": "P2-I01",
+      "product_id": "P2",
+      "ingredient": "Bawang merah",
+      "risk_level": "LOW",
+      "risk_reason": "Matches risk-ingredients.md row 'fresh vegetables, fresh fruit, fresh chilli, shallots, garlic, plain water | LOW | Unprocessed plant material'. Bawang merah (shallots) is fresh unprocessed produce.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L7",
+      "match_basis": "Recipe 'Bawang merah' matches invoice L7 'Bawang merah India' on item name (Seri Wangi invoice DOC-013).",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": ["DOC-027", "DOC-013"],
+      "actions": ["Confirm with the certifying authority whether a halal declaration is required for fresh shallots (bawang merah)."]
+    },
+    {
+      "ingredient_id": "P2-I02",
+      "product_id": "P2",
+      "ingredient": "Udang kering",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'shrimp paste (belacan), fish sauce, dried seafood | MEDIUM | Processed; check additives and colouring'.",
+      "supplier_id": "S3",
+      "invoice_line_id": "L5",
+      "match_basis": "Recipe 'Udang kering' matches invoice L5 'Udang kering gred A (pukal)' on item name (Pemborong Hasil Laut Kuala invoice DOC-012).",
+      "cert_id": "C6",
+      "cert_expiry": "2028-04-14",
+      "verdict": "MISMATCH",
+      "evidence": ["DOC-027", "DOC-012", "DOC-009"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-MLPT-1203-0661 in the official halal directory.",
+        "Certificate DOC-009 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from the supplier.",
+        "Request a halal certificate from Pemborong Hasil Laut Kuala covering bulk dried shrimp — certificate C6 is held by 'Syarikat Makanan Laut Pantai Timur Sdn Bhd' (a different company) and covers branded packaging (100g, 250g, 1kg), not the bulk 'pukal' form that was invoiced."
+      ]
+    },
+    {
+      "ingredient_id": "P2-I03",
+      "product_id": "P2",
+      "ingredient": "Minyak Masak Teratai",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'cooking oil, palm olein | MEDIUM | Processing aids and refining; a cert is normally available'.",
+      "supplier_id": "S2",
+      "invoice_line_id": "L2",
+      "match_basis": "Recipe 'Minyak Masak Teratai' matches invoice L2 'Minyak Masak Teratai (palm olein) 17kg tin' on brand 'Teratai' and item name (Kilang Minyak Teratai invoice DOC-011).",
+      "cert_id": "C4",
+      "cert_expiry": "2027-09-30",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-027", "DOC-011", "DOC-007"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-KMT-1102-1180 in the official halal directory.",
+        "Certificate DOC-007 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Kilang Minyak Teratai Sdn Bhd."
+      ]
+    },
+    {
+      "ingredient_id": "P2-I04",
+      "product_id": "P2",
+      "ingredient": "Cili kering Seri Wangi",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'dried chilli, tamarind (single-ingredient, no additives) | MEDIUM | Minimally processed; additives possible'.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L6",
+      "match_basis": "Recipe 'Cili kering Seri Wangi' matches invoice L6 'Cili kering kerinting (buang tangkai)' brand 'Seri Wangi' (Seri Wangi invoice DOC-013).",
+      "cert_id": "C5",
+      "cert_expiry": "2026-07-31",
+      "verdict": "EXPIRED",
+      "evidence": ["DOC-027", "DOC-013", "DOC-008"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-SW-1021-0457 in the official halal directory.",
+        "Certificate DOC-008 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Syarikat Rempah Seri Wangi.",
+        "Request a renewed halal certificate from Syarikat Rempah Seri Wangi — certificate C5 expired on 2026-07-31."
+      ]
+    },
+    {
+      "ingredient_id": "P2-I05",
+      "product_id": "P2",
+      "ingredient": "Gula halus Manis Jaya",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'sugar, salt, flour, spices (processed, packaged) | MEDIUM | Processing aids, anti-caking agents'.",
+      "supplier_id": "S2",
+      "invoice_line_id": "L3",
+      "match_basis": "Recipe 'Gula halus Manis Jaya' matches invoice L3 'Gula Halus Manis Jaya 1kg' code GMJ-1K on item name and product code (Kilang Minyak Teratai invoice DOC-011).",
+      "cert_id": "C3",
+      "cert_expiry": "2027-12-31",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-027", "DOC-011", "DOC-006"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-GMJ-0911-0032 in the official halal directory.",
+        "Certificate DOC-006 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Kilang Gula Manis Jaya Berhad (brand owner)."
+      ]
+    },
+    {
+      "ingredient_id": "P2-I06",
+      "product_id": "P2",
+      "ingredient": "Serai",
+      "risk_level": "LOW",
+      "risk_reason": "Matches risk-ingredients.md row 'fresh vegetables, fresh fruit, fresh chilli, shallots, garlic, plain water | LOW | Unprocessed plant material'. Serai (lemongrass) is fresh unprocessed produce.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L10",
+      "match_basis": "Recipe 'Serai' matches invoice L10 'Serai segar' on item name (Seri Wangi invoice DOC-013).",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": ["DOC-027", "DOC-013"],
+      "actions": ["Confirm with the certifying authority whether a halal declaration is required for fresh lemongrass (serai)."]
+    },
+    {
+      "ingredient_id": "P2-I07",
+      "product_id": "P2",
+      "ingredient": "Bawang putih",
+      "risk_level": "LOW",
+      "risk_reason": "Matches risk-ingredients.md row 'fresh vegetables, fresh fruit, fresh chilli, shallots, garlic, plain water | LOW | Unprocessed plant material'. Bawang putih (garlic) is fresh unprocessed produce.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L8",
+      "match_basis": "Recipe 'Bawang putih' matches invoice L8 'Bawang putih China' on item name (Seri Wangi invoice DOC-013).",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "LOW_RISK_NO_CERT",
+      "evidence": ["DOC-027", "DOC-013"],
+      "actions": ["Confirm with the certifying authority whether a halal declaration is required for fresh garlic (bawang putih)."]
+    },
+    {
+      "ingredient_id": "P2-I08",
+      "product_id": "P2",
+      "ingredient": "Asam jawa Cap Pokok",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'dried chilli, tamarind (single-ingredient, no additives) | MEDIUM | Minimally processed; additives possible'.",
+      "supplier_id": "S1",
+      "invoice_line_id": "L9",
+      "match_basis": "Recipe 'Asam jawa Cap Pokok' matches invoice L9 'Asam jawa blok 500g' brand 'Cap Pokok' on brand and item name (Seri Wangi invoice DOC-013).",
+      "cert_id": "C1",
+      "cert_expiry": "2027-05-31",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-027", "DOC-013", "DOC-004"],
+      "actions": [
+        "Verify certificate SAMPLE-JAIN-ACP-0715-0088 in the official halal directory.",
+        "Certificate DOC-004 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Perusahaan Asam Cap Pokok (brand owner)."
+      ]
+    },
+    {
+      "ingredient_id": "P2-I09",
+      "product_id": "P2",
+      "ingredient": "Serbuk perisa ayam (Perisa Ayam Emas)",
+      "risk_level": "HIGH",
+      "risk_reason": "Name contains 'perisa' (flavouring); matches risk-ingredients.md row 'flavour / flavouring / perisa / essence / extract | HIGH | Carriers may be ethanol or animal-derived'. Spec sheet (DOC-014) also lists chicken fat, chicken powder, flavouring, flavour enhancer (E621) and anti-caking agent (E551) — each of which is HIGH-risk per the 'meat, poultry, bone broth, stock, animal fat, chicken powder' and E-number rows.",
+      "supplier_id": "S4",
+      "invoice_line_id": "L1",
+      "match_basis": "Recipe 'Perisa Ayam Emas' matches invoice L1 'Perisa Ayam Emas - serbuk perisa ayam 1kg' code PAE-1K on product name and code (Bekalan Bahan Makanan Cahaya invoice DOC-010).",
+      "cert_id": null,
+      "cert_expiry": null,
+      "verdict": "NO_CERT",
+      "evidence": ["DOC-027", "DOC-010", "DOC-014"],
+      "actions": [
+        "Request a halal certificate and full specification sheet for Perisa Ayam Emas from Bekalan Bahan Makanan Cahaya — the invoice (DOC-010) says 'Halal cert - ask sales rep' and the spec sheet (DOC-014) says 'Halal status: please refer to supplier'.",
+        "If no halal-certified chicken flavour seasoning can be sourced, substitute with a halal-certified plant-based flavouring (see substitute_suggestions)."
+      ]
+    },
+    {
+      "ingredient_id": "P2-I10",
+      "product_id": "P2",
+      "ingredient": "Garam Bintang Laut",
+      "risk_level": "MEDIUM",
+      "risk_reason": "Matches risk-ingredients.md row 'sugar, salt, flour, spices (processed, packaged) | MEDIUM | Processing aids, anti-caking agents'.",
+      "supplier_id": "S2",
+      "invoice_line_id": "L4",
+      "match_basis": "Recipe 'Garam Bintang Laut' matches invoice L4 'Garam Halus Bintang Laut 1kg' code GBL-1K on item name and product code (Kilang Minyak Teratai invoice DOC-011).",
+      "cert_id": "C2",
+      "cert_expiry": "2028-02-28",
+      "verdict": "VERIFIED",
+      "evidence": ["DOC-027", "DOC-011", "DOC-005"],
+      "actions": [
+        "Verify certificate SAMPLE-JAKIM-BLS-0809-0210 in the official halal directory.",
+        "Certificate DOC-005 is marked sample_or_fictional in the manifest — it is not a genuine halal certificate; obtain the real certificate from Bintang Laut Salt Industries Sdn Bhd (brand owner)."
+      ]
+    }
+  ],
+  "supplier_requests": [
+    {
+      "request_id": "SR-01",
+      "supplier_id": "S1",
+      "cert_id": "C5",
+      "reason": "Certificate C5 (SAMPLE-JAKIM-SW-1021-0457) for Cili Kering Seri Wangi expired on 2026-07-31, before the as_of date of 2026-10-10. Affects P1-I03 and P2-I04.",
+      "draft_message": "Kepada Syarikat Rempah Seri Wangi,\n\nSijil halal bagi produk 'Cili Kering Seri Wangi' (no. SAMPLE-JAKIM-SW-1021-0457) telah tamat tempoh pada 31 Julai 2026. Kami memohon agar pihak tuan/madam memperbaharui sijil halal tersebut dan menghantar salinan sijil yang baharu kepada kami secepat mohon untuk memenuhi keperluan permohonan sijil halal kami.\n\nTerima kasih.\nSambal Mak Embun"
+    },
+    {
+      "request_id": "SR-02",
+      "supplier_id": "S3",
+      "cert_id": "C6",
+      "reason": "Certificate C6 (SAMPLE-JAKIM-MLPT-1203-0661) is held by 'Syarikat Makanan Laut Pantai Timur Sdn Bhd' (a different company from supplier S3) and covers branded packaging (100g, 250g, 1kg), not the bulk 'pukal' dried shrimp invoiced. Affects P2-I02.",
+      "draft_message": "Kepada Pemborong Hasil Laut Kuala,\n\nBerdasarkan invois bertarikh 26 Ogos 2026, kami membeli 'Udang kering gred A (pukal)' daripada tuan/madam. Walau bagaimanapun, sijil halal yang ada dalam fail kami (no. SAMPLE-JAKIM-MLPT-1203-0661) adalah atas nama 'Syarikat Makanan Laut Pantai Timur Sdn Bhd' dan meliputi pembungkusan berjenama (100g, 250g, 1kg), bukan udang kering pukal yang kami beli.\n\nKami memohon agar pihak tuan/madam memberikan salinan sijil halal yang sah atas nama syarikat tuan/madam yang meliputi udang kering pukal. Sekiranya tiada sijil demikian, sila maklumkan kepada kami.\n\nTerima kasih.\nSambal Mak Embun"
+    },
+    {
+      "request_id": "SR-03",
+      "supplier_id": "S4",
+      "cert_id": null,
+      "reason": "No halal certificate for Perisa Ayam Emas is in the folder. Invoice DOC-010 says 'Halal cert - ask sales rep' and spec sheet DOC-014 says 'Halal status: please refer to supplier'. Affects P2-I09.",
+      "draft_message": "Kepada Bekalan Bahan Makanan Cahaya,\n\nKami telah membeli produk 'Perisa Ayam Emas - Chicken Flavour Seasoning Powder' (kode PAE-1K) daripada tuan/madam mengikut invois bertarikh 10 September 2026. Dalam invois tersebut terdapat catatan 'Halal cert - ask sales rep'.\n\nKerana produk ini mengandungi lemak ayam, serbuk ayam, perisa dan penambah perisa (E621), kami memohon agar pihak tuan/madam memberikan:\n1. Salinan sijil halal yang sah bagi produk ini;\n2. Brosur spesifikasi yang menyatakan nama pengilang dan negara asal.\n\nSekiranya sijil halal tidak tersedia, sila maklumkan kepada kami supaya kami boleh mencari bahan pengganti yang bersertifikat halal.\n\nTerima kasih.\nSambal Mak Embun"
+    }
+  ],
+  "substitute_suggestions": [
+    {
+      "ingredient_id": "P2-I09",
+      "suggestion": "Source a halal-certified, plant-based chicken-style flavouring seasoning as a substitute for Perisa Ayam Emas. The substitute must be free of animal fat, chicken powder and alcohol-based carriers, and must carry a valid halal certificate that covers the flavouring itself and all E-number additives (e.g. E621 flavour enhancer, E551 anti-caking agent). Request the full ingredient list and specification sheet from any candidate supplier before switching.",
+      "status": "NEEDS_REVIEW",
+      "reason": "No certified alternative supplier is documented in the folder; the owner must source and evaluate one. The current Perisa Ayam Emas contains chicken fat and chicken powder (animal-derived) with no halal certificate."
+    }
+  ]
+}

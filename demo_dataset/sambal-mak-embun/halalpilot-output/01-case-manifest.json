@@ -1,0 +1,773 @@
+{
+  "schema": "halalpilot/case-manifest@1",
+  "case_id": "sambal-mak-embun",
+  "as_of": "2026-10-10",
+  "business": {
+    "name": {
+      "value": "SAMBAL MAK EMBUN",
+      "source": "DOC-003",
+      "status": "EXTRACTED"
+    },
+    "address": {
+      "value": "No. 12, Jalan Demo 3/7, Taman Contoh, 43000 Kajang, Selangor (SAMPLE)",
+      "source": "DOC-003",
+      "status": "EXTRACTED"
+    },
+    "owner": {
+      "value": "Embun binti Contoh",
+      "source": "DOC-003",
+      "status": "EXTRACTED"
+    },
+    "business_registration_no": {
+      "value": "SAMPLE-202301045678 (003456789-X)",
+      "source": "DOC-003",
+      "status": "EXTRACTED"
+    },
+    "premise_licence_no": {
+      "value": "SAMPLE-LPM-2026-08812",
+      "source": "DOC-001",
+      "status": "EXTRACTED"
+    },
+    "premise_licence_valid_until": {
+      "value": "2026-12-31",
+      "source": "DOC-001",
+      "status": "EXTRACTED"
+    },
+    "food_handlers": {
+      "value": "3 orang",
+      "source": "DOC-028",
+      "status": "EXTRACTED"
+    },
+    "staff": [
+      {
+        "name": "Embun binti Contoh",
+        "position": "Pemilik/Masak",
+        "typhoid_injection_date": "2025-02-12",
+        "food_handler_course_cert": "SAMPLE-KPM-25-01123",
+        "source": "DOC-028",
+        "status": "EXTRACTED"
+      },
+      {
+        "name": "Siti Nur binti Demo",
+        "position": "Pembantu",
+        "typhoid_injection_date": "2025-06-03",
+        "food_handler_course_cert": "SAMPLE-KPM-25-04567",
+        "source": "DOC-028",
+        "status": "EXTRACTED"
+      },
+      {
+        "name": "Amin bin Sampel",
+        "position": "Pembungkusan",
+        "typhoid_injection_date": "2025-06-03",
+        "food_handler_course_cert": "SAMPLE-KPM-25-04568",
+        "source": "DOC-028",
+        "status": "EXTRACTED"
+      }
+    ]
+  },
+  "documents": [
+    {
+      "doc_id": "DOC-001",
+      "path": "business/lesen-premis-mpkj.txt",
+      "type": "business_doc",
+      "readable": true,
+      "summary": "MPKJ home-based food premise licence for Sambal Mak Embun; valid until 31/12/2026 (sample)."
+    },
+    {
+      "doc_id": "DOC-002",
+      "path": "business/pelan-premis.txt",
+      "type": "business_doc",
+      "readable": true,
+      "summary": "Owner-drawn premise layout showing dry store, preparation, cooking and packing areas."
+    },
+    {
+      "doc_id": "DOC-003",
+      "path": "business/ssm-pendaftaran.txt",
+      "type": "business_doc",
+      "readable": true,
+      "summary": "SSM business registration certificate for Sambal Mak Embun; owner Embun binti Contoh (sample)."
+    },
+    {
+      "doc_id": "DOC-004",
+      "path": "certificates/sijil-halal-asam-cap-pokok.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Sample fictional halal certificate for Perusahaan Asam Cap Pokok - Asam Jawa Blok Cap Pokok."
+    },
+    {
+      "doc_id": "DOC-005",
+      "path": "certificates/sijil-halal-garam-bintang-laut.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Sample fictional halal certificate for Bintang Laut Salt Industries Sdn Bhd - Garam Bintang Laut."
+    },
+    {
+      "doc_id": "DOC-006",
+      "path": "certificates/sijil-halal-gula-manis-jaya.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Sample fictional halal certificate for Kilang Gula Manis Jaya Berhad - Gula Halus Manis Jaya."
+    },
+    {
+      "doc_id": "DOC-007",
+      "path": "certificates/sijil-halal-minyak-teratai.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Sample fictional halal certificate for Kilang Minyak Teratai Sdn Bhd - Minyak Masak Teratai."
+    },
+    {
+      "doc_id": "DOC-008",
+      "path": "certificates/sijil-halal-seri-wangi.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Sample fictional halal certificate for Syarikat Rempah Seri Wangi - Cili Kering Seri Wangi."
+    },
+    {
+      "doc_id": "DOC-009",
+      "path": "certificates/sijil-halal-udang-kering.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Sample fictional halal certificate for Syarikat Makanan Laut Pantai Timur Sdn Bhd - Udang Kering Pantai Timur."
+    },
+    {
+      "doc_id": "DOC-010",
+      "path": "invoices/INV-BBMC-1188.txt",
+      "type": "invoice",
+      "readable": true,
+      "summary": "Invoice from Bekalan Bahan Makanan Cahaya dated 10/09/2026 for Perisa Ayam Emas; remark says halal cert - ask sales rep."
+    },
+    {
+      "doc_id": "DOC-011",
+      "path": "invoices/INV-KMT-0921.txt",
+      "type": "invoice",
+      "readable": true,
+      "summary": "Invoice from Kilang Minyak Teratai Sdn Bhd dated 02-09-2026 for cooking oil, sugar and salt."
+    },
+    {
+      "doc_id": "DOC-012",
+      "path": "invoices/INV-PHLK-3372.txt",
+      "type": "invoice",
+      "readable": true,
+      "summary": "Cash invoice from Pemborong Hasil Laut Kuala dated 26/08/2026 for bulk dried shrimp."
+    },
+    {
+      "doc_id": "DOC-013",
+      "path": "invoices/INV-SW-26-0815.txt",
+      "type": "invoice",
+      "readable": true,
+      "summary": "Invoice from Syarikat Rempah Seri Wangi dated 18/08/2026 for chillies, shallots, garlic, tamarind and lemongrass."
+    },
+    {
+      "doc_id": "DOC-014",
+      "path": "invoices/spec-perisa-ayam-emas.txt",
+      "type": "product_spec",
+      "readable": true,
+      "summary": "Specification sheet for Perisa Ayam Emas supplied by Bekalan Bahan Makanan Cahaya; halal status refers to supplier."
+    },
+    {
+      "doc_id": "DOC-015",
+      "path": "photos/01-ruang-memasak.jpg",
+      "type": "photo",
+      "readable": true,
+      "summary": "Production kitchen annex with stove, woks, tables, blenders, posted SOPs and staff in PPE."
+    },
+    {
+      "doc_id": "DOC-016",
+      "path": "photos/02-stor-kering.jpg",
+      "type": "photo",
+      "readable": true,
+      "summary": "Dry store showing labelled tubs, cooking oil tins, sugar/salt packs, flavouring and locked cleaning cabinet."
+    },
+    {
+      "doc_id": "DOC-017",
+      "path": "procedures/SENARAI-SOP.txt",
+      "type": "procedure",
+      "readable": true,
+      "summary": "List of SOPs; references SOP-03 which is not present in the folder."
+    },
+    {
+      "doc_id": "DOC-018",
+      "path": "procedures/SOP-01-penerimaan-bahan.txt",
+      "type": "procedure",
+      "readable": true,
+      "summary": "SOP for receiving raw materials."
+    },
+    {
+      "doc_id": "DOC-019",
+      "path": "procedures/SOP-02-penyimpanan.txt",
+      "type": "procedure",
+      "readable": true,
+      "summary": "SOP for storage of raw materials and finished products."
+    },
+    {
+      "doc_id": "DOC-020",
+      "path": "procedures/SOP-04-kawalan-perosak.txt",
+      "type": "procedure",
+      "readable": true,
+      "summary": "SOP for pest control."
+    },
+    {
+      "doc_id": "DOC-021",
+      "path": "procedures/laporan-servis-kawalan-perosak.txt",
+      "type": "procedure",
+      "readable": true,
+      "summary": "Pest control service report dated 14/08/2026."
+    },
+    {
+      "doc_id": "DOC-022",
+      "path": "products/label-sambal-bawang-garing.txt",
+      "type": "label",
+      "readable": true,
+      "summary": "Jar label text for Sambal Bawang Garing 200g; notes no halal logo yet."
+    },
+    {
+      "doc_id": "DOC-023",
+      "path": "products/label-sambal-udang-kering.txt",
+      "type": "label",
+      "readable": true,
+      "summary": "Jar label text for Sambal Udang Kering 200g; notes no halal logo yet."
+    },
+    {
+      "doc_id": "DOC-024",
+      "path": "products/spesifikasi-sambal-bawang-garing.txt",
+      "type": "product_spec",
+      "readable": true,
+      "summary": "Product specification for Sambal Bawang Garing 200g."
+    },
+    {
+      "doc_id": "DOC-025",
+      "path": "products/spesifikasi-sambal-udang-kering.txt",
+      "type": "product_spec",
+      "readable": true,
+      "summary": "Product specification for Sambal Udang Kering 200g."
+    },
+    {
+      "doc_id": "DOC-026",
+      "path": "recipes/resepi-sambal-bawang-garing.txt",
+      "type": "recipe",
+      "readable": true,
+      "summary": "Recipe for Sambal Bawang Garing (1 batch = 60 jars x 200g)."
+    },
+    {
+      "doc_id": "DOC-027",
+      "path": "recipes/resepi-sambal-udang-kering.txt",
+      "type": "recipe",
+      "readable": true,
+      "summary": "Recipe for Sambal Udang Kering (1 batch = 50 jars x 200g)."
+    },
+    {
+      "doc_id": "DOC-028",
+      "path": "staff/rekod-pengendali-makanan.txt",
+      "type": "staff_record",
+      "readable": true,
+      "summary": "Food handler record listing 3 staff, typhoid injections and course certificates."
+    }
+  ],
+  "products": [
+    {
+      "product_id": "P1",
+      "name": "Sambal Bawang Garing",
+      "source": "DOC-026",
+      "status": "EXTRACTED",
+      "ingredients": [
+        {
+          "ingredient_id": "P1-I01",
+          "name": "Bawang merah",
+          "quantity": "5.0 kg (hiris nipis)",
+          "source": "DOC-026",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I02",
+          "name": "Minyak Masak Teratai",
+          "quantity": "3.0 L",
+          "source": "DOC-026",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I03",
+          "name": "Cili kering Seri Wangi",
+          "quantity": "1.2 kg (buang biji, rendam air panas 30 min)",
+          "source": "DOC-026",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I04",
+          "name": "Gula halus Manis Jaya",
+          "quantity": "600 g",
+          "source": "DOC-026",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I05",
+          "name": "Bawang putih",
+          "quantity": "500 g",
+          "source": "DOC-026",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I06",
+          "name": "Asam jawa Cap Pokok",
+          "quantity": "300 g (larut dalam 500 ml air, tapis)",
+          "source": "DOC-026",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I07",
+          "name": "Garam Bintang Laut",
+          "quantity": "120 g",
+          "source": "DOC-026",
+          "status": "EXTRACTED"
+        }
+      ]
+    },
+    {
+      "product_id": "P2",
+      "name": "Sambal Udang Kering",
+      "source": "DOC-027",
+      "status": "EXTRACTED",
+      "ingredients": [
+        {
+          "ingredient_id": "P2-I01",
+          "name": "Bawang merah",
+          "quantity": "3.5 kg",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I02",
+          "name": "Udang kering",
+          "quantity": "2.0 kg (rendam 15 min, toskan, tumbuk kasar)",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I03",
+          "name": "Minyak Masak Teratai",
+          "quantity": "2.0 L",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I04",
+          "name": "Cili kering Seri Wangi",
+          "quantity": "1.0 kg",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I05",
+          "name": "Gula halus Manis Jaya",
+          "quantity": "500 g",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I06",
+          "name": "Serai",
+          "quantity": "400 g (10-12 batang)",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I07",
+          "name": "Bawang putih",
+          "quantity": "300 g",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I08",
+          "name": "Asam jawa Cap Pokok",
+          "quantity": "250 g",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I09",
+          "name": "Serbuk perisa ayam (Perisa Ayam Emas)",
+          "quantity": "150 g",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I10",
+          "name": "Garam Bintang Laut",
+          "quantity": "80 g",
+          "source": "DOC-027",
+          "status": "EXTRACTED"
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "supplier_id": "S1",
+      "name": "SYARIKAT REMPAH SERI WANGI (SAMPLE)",
+      "source": "DOC-013",
+      "status": "EXTRACTED"
+    },
+    {
+      "supplier_id": "S2",
+      "name": "KILANG MINYAK TERATAI SDN BHD (SAMPLE)",
+      "source": "DOC-011",
+      "status": "EXTRACTED"
+    },
+    {
+      "supplier_id": "S3",
+      "name": "PEMBORONG HASIL LAUT KUALA (SAMPLE)",
+      "source": "DOC-012",
+      "status": "EXTRACTED"
+    },
+    {
+      "supplier_id": "S4",
+      "name": "BEKALAN BAHAN MAKANAN CAHAYA (SAMPLE)",
+      "source": "DOC-010",
+      "status": "EXTRACTED"
+    },
+    {
+      "supplier_id": "S5",
+      "name": "Bekalan Bahan Makanan Cahaya (distributor)",
+      "source": "DOC-014",
+      "status": "EXTRACTED"
+    }
+  ],
+  "invoice_lines": [
+    {
+      "line_id": "L1",
+      "doc_id": "DOC-010",
+      "supplier_id": "S4",
+      "item": "Perisa Ayam Emas - serbuk perisa ayam 1kg",
+      "code": "PAE-1K",
+      "brand": null,
+      "date": "2026-09-10",
+      "source": "DOC-010",
+      "status": "EXTRACTED",
+      "note": "Product imported. Spec sheet attached. Halal cert - ask sales rep."
+    },
+    {
+      "line_id": "L2",
+      "doc_id": "DOC-011",
+      "supplier_id": "S2",
+      "item": "Minyak Masak Teratai (palm olein) 17kg tin",
+      "code": "TRT-17T",
+      "brand": null,
+      "date": "2026-09-02",
+      "source": "DOC-011",
+      "status": "EXTRACTED",
+      "note": "Goods received in good condition: ______ (signed: Embun)"
+    },
+    {
+      "line_id": "L3",
+      "doc_id": "DOC-011",
+      "supplier_id": "S2",
+      "item": "Gula Halus Manis Jaya 1kg",
+      "code": "GMJ-1K",
+      "brand": null,
+      "date": "2026-09-02",
+      "source": "DOC-011",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L4",
+      "doc_id": "DOC-011",
+      "supplier_id": "S2",
+      "item": "Garam Halus Bintang Laut 1kg",
+      "code": "GBL-1K",
+      "brand": null,
+      "date": "2026-09-02",
+      "source": "DOC-011",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L5",
+      "doc_id": "DOC-012",
+      "supplier_id": "S3",
+      "item": "Udang kering gred A (pukal)",
+      "code": null,
+      "brand": null,
+      "date": "2026-08-26",
+      "source": "DOC-012",
+      "status": "EXTRACTED",
+      "note": "** Udang kering kami diproses sendiri. Sijil halal pembekal dilampirkan. **"
+    },
+    {
+      "line_id": "L6",
+      "doc_id": "DOC-013",
+      "supplier_id": "S1",
+      "item": "Cili kering kerinting (buang tangkai)",
+      "code": null,
+      "brand": "Seri Wangi",
+      "date": "2026-08-18",
+      "source": "DOC-013",
+      "status": "EXTRACTED",
+      "note": "25 kg; Terma: 30 hari. Barang yang dijual tidak boleh dipulangkan."
+    },
+    {
+      "line_id": "L7",
+      "doc_id": "DOC-013",
+      "supplier_id": "S1",
+      "item": "Bawang merah India",
+      "code": null,
+      "brand": null,
+      "date": "2026-08-18",
+      "source": "DOC-013",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L8",
+      "doc_id": "DOC-013",
+      "supplier_id": "S1",
+      "item": "Bawang putih China",
+      "code": null,
+      "brand": null,
+      "date": "2026-08-18",
+      "source": "DOC-013",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L9",
+      "doc_id": "DOC-013",
+      "supplier_id": "S1",
+      "item": "Asam jawa blok 500g",
+      "code": null,
+      "brand": "Cap Pokok",
+      "date": "2026-08-18",
+      "source": "DOC-013",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L10",
+      "doc_id": "DOC-013",
+      "supplier_id": "S1",
+      "item": "Serai segar",
+      "code": null,
+      "brand": null,
+      "date": "2026-08-18",
+      "source": "DOC-013",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L11",
+      "doc_id": "DOC-014",
+      "supplier_id": "S5",
+      "item": "Perisa Ayam Emas - Chicken Flavour Seasoning Powder",
+      "code": null,
+      "brand": null,
+      "date": null,
+      "source": "DOC-014",
+      "status": "NEEDS_REVIEW",
+      "reason": "Specification sheet is not an invoice; it does not state a purchase date, item code, brand or quantity.",
+      "note": null
+    }
+  ],
+  "certificates": [
+    {
+      "cert_id": "C1",
+      "doc_id": "DOC-004",
+      "holder": "Perusahaan Asam Cap Pokok",
+      "certificate_no": "SAMPLE-JAIN-ACP-0715-0088",
+      "issuer": null,
+      "products_covered": [
+        "Asam Jawa Blok Cap Pokok 250g, 500g"
+      ],
+      "expiry_date": "2027-05-31",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-004",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C2",
+      "doc_id": "DOC-005",
+      "holder": "Bintang Laut Salt Industries Sdn Bhd",
+      "certificate_no": "SAMPLE-JAKIM-BLS-0809-0210",
+      "issuer": null,
+      "products_covered": [
+        "Garam Halus Bintang Laut 500g, 1kg"
+      ],
+      "expiry_date": "2028-02-28",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-005",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C3",
+      "doc_id": "DOC-006",
+      "holder": "Kilang Gula Manis Jaya Berhad",
+      "certificate_no": "SAMPLE-JAKIM-GMJ-0911-0032",
+      "issuer": null,
+      "products_covered": [
+        "Gula Halus Manis Jaya (gula pasir halus) 1kg, 2kg, 50kg"
+      ],
+      "expiry_date": "2027-12-31",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-006",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C4",
+      "doc_id": "DOC-007",
+      "holder": "Kilang Minyak Teratai Sdn Bhd",
+      "certificate_no": "SAMPLE-JAKIM-KMT-1102-1180",
+      "issuer": null,
+      "products_covered": [
+        "Minyak Masak Teratai (palm olein) - 1kg, 2kg, 5kg, 17kg"
+      ],
+      "expiry_date": "2027-09-30",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-007",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C5",
+      "doc_id": "DOC-008",
+      "holder": "Syarikat Rempah Seri Wangi",
+      "certificate_no": "SAMPLE-JAKIM-SW-1021-0457",
+      "issuer": null,
+      "products_covered": [
+        "Cili Kering Seri Wangi (cili kering kerinting)"
+      ],
+      "expiry_date": "2026-07-31",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-008",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C6",
+      "doc_id": "DOC-009",
+      "holder": "Syarikat Makanan Laut Pantai Timur Sdn Bhd",
+      "certificate_no": "SAMPLE-JAKIM-MLPT-1203-0661",
+      "issuer": null,
+      "products_covered": [
+        "Udang Kering Pantai Timur (bungkusan berjenama 100g, 250g, 1kg)"
+      ],
+      "expiry_date": "2028-04-14",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-009",
+      "status": "EXTRACTED"
+    }
+  ],
+  "photo_observations": [
+    {
+      "obs_id": "O1",
+      "doc_id": "DOC-015",
+      "text": "Scene: production kitchen (separate annex).",
+      "source": "DOC-015",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O2",
+      "doc_id": "DOC-015",
+      "text": "3-burner gas stove, two large woks, exhaust hood.",
+      "source": "DOC-015",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O3",
+      "doc_id": "DOC-015",
+      "text": "Stainless steel table; blenders x2.",
+      "source": "DOC-015",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O4",
+      "doc_id": "DOC-015",
+      "text": "Wall: printed sheets 'SOP-01', 'SOP-02', 'SOP-04'.",
+      "source": "DOC-015",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O5",
+      "doc_id": "DOC-015",
+      "text": "Double-bowl sink with hand soap and 'Basuh Tangan' sign.",
+      "source": "DOC-015",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O6",
+      "doc_id": "DOC-015",
+      "text": "Staff wearing apron, head cover and gloves.",
+      "source": "DOC-015",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O7",
+      "doc_id": "DOC-016",
+      "text": "Scene: dry store.",
+      "source": "DOC-016",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O8",
+      "doc_id": "DOC-016",
+      "text": "Labelled tubs: 'Cili Kering Seri Wangi', 'Udang Kering'.",
+      "source": "DOC-016",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O9",
+      "doc_id": "DOC-016",
+      "text": "'Udang Kering' tub: plain plastic bag inside, no brand.",
+      "source": "DOC-016",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O10",
+      "doc_id": "DOC-016",
+      "text": "4 tins 'Minyak Masak Teratai' on pallet.",
+      "source": "DOC-016",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O11",
+      "doc_id": "DOC-016",
+      "text": "Packs: 'Gula Halus Manis Jaya', 'Garam Bintang Laut'.",
+      "source": "DOC-016",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O12",
+      "doc_id": "DOC-016",
+      "text": "Packs 'Perisa Ayam Emas' on shelf.",
+      "source": "DOC-016",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O13",
+      "doc_id": "DOC-016",
+      "text": "Locked cabinet labelled 'BAHAN CUCI'.",
+      "source": "DOC-016",
+      "status": "OBSERVED"
+    }
+  ],
+  "needs_review": [
+    {
+      "nr_id": "NR-01",
+      "about": "SOP-03 Pembersihan & sanitasi peralatan dan premis",
+      "reason": "SOP-03 is listed in the SOP register (DOC-017) but the procedure document is not present in the folder.",
+      "source": "DOC-017",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-02",
+      "about": "Halal certificate for Perisa Ayam Emas",
+      "reason": "No halal certificate for Perisa Ayam Emas is in the folder; invoice DOC-010 says 'Halal cert - ask sales rep' and the spec sheet (DOC-014) says 'Halal status: please refer to supplier'.",
+      "source": "DOC-010",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-03",
+      "about": "Perisa Ayam Emas manufacturer and country of origin",
+      "reason": "Spec sheet (DOC-014) states manufacturer 'not stated' and country of origin 'imported (country not stated)'; actual details must be requested from supplier.",
+      "source": "DOC-014",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-04",
+      "about": "Invoice line for specification sheet DOC-014",
+      "reason": "The specification sheet is not an invoice; it does not state a purchase date, item code, brand or quantity (DOC-014).",
+      "source": "DOC-014",
+      "status": "NEEDS_REVIEW"
+    }
+  ]
+}

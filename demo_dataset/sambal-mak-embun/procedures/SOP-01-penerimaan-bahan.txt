@@ -1,0 +1,10 @@
+SOP-01: PENERIMAAN BAHAN MENTAH
+Tujuan: Memastikan hanya bahan yang memenuhi syarat diterima masuk.
+
+1. Semak invois dengan pesanan (jenis, jenama, kuantiti).
+2. Periksa keadaan bungkusan - tidak koyak, tidak basah, tiada serangga.
+3. Periksa tarikh luput pada bungkusan.
+4. Bahan basah (bawang, serai) diperiksa kesegaran; tolak jika busuk/berkulat.
+5. Catat dalam Buku Log Penerimaan: tarikh, pembekal, bahan, kuantiti, nama penerima.
+6. Bahan yang ditolak diasingkan dan dipulangkan kepada pembekal.
+Rekod: Buku Log Penerimaan

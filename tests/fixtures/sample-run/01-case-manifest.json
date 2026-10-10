@@ -1,0 +1,580 @@
+{
+  "schema": "halalpilot/case-manifest@1",
+  "case_id": "kedai-sambal-contoh",
+  "as_of": "2026-10-10",
+  "business": {
+    "name": {
+      "value": "Kedai Sambal Contoh",
+      "source": "DOC-008",
+      "status": "EXTRACTED"
+    },
+    "address": {
+      "value": "Shah Alam - SAMPLE ADDRESS ONLY",
+      "source": "DOC-008",
+      "status": "EXTRACTED",
+      "note": "Marked as sample address; full premise address not provided"
+    },
+    "owner": {
+      "value": "Puan Contoh",
+      "source": "DOC-008",
+      "status": "EXTRACTED"
+    },
+    "food_handlers": {
+      "value": "2 (owner + sister), both Muslim",
+      "source": "DOC-008",
+      "status": "EXTRACTED"
+    },
+    "registration_no": {
+      "value": null,
+      "source": "DOC-008",
+      "status": "NEEDS_REVIEW",
+      "reason": "Owner note says SSM exists but no copy is in the folder"
+    }
+  },
+  "documents": [
+    {
+      "doc_id": "DOC-001",
+      "path": "certificates/cert-bintang-flavour.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Bintang Food Ingredients halal cert (SAMPLE) for Seafood Flavour Powder SF-200"
+    },
+    {
+      "doc_id": "DOC-002",
+      "path": "certificates/sijil-belacan-pak-ali.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Perusahaan Belacan Pak Ali halal cert (SAMPLE), valid until 31/08/2026"
+    },
+    {
+      "doc_id": "DOC-003",
+      "path": "certificates/sijil-minyak-sentosa.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Pembekal Minyak Sentosa halal cert (SAMPLE), expiry 20 Nov 2026"
+    },
+    {
+      "doc_id": "DOC-004",
+      "path": "certificates/sijil-rempah-maju.txt",
+      "type": "certificate",
+      "readable": true,
+      "summary": "Syarikat Rempah Maju halal cert (SAMPLE) for dried chilli and tamarind"
+    },
+    {
+      "doc_id": "DOC-005",
+      "path": "invoices/INV-BFI-0455.txt",
+      "type": "invoice",
+      "readable": true,
+      "summary": "Bintang Food Ingredients invoice: SF-210 flavour, E471 emulsifier"
+    },
+    {
+      "doc_id": "DOC-006",
+      "path": "invoices/INV-PMS-2207.txt",
+      "type": "invoice",
+      "readable": true,
+      "summary": "Pembekal Minyak Sentosa invoice: cooking oil, sugar, salt"
+    },
+    {
+      "doc_id": "DOC-007",
+      "path": "invoices/INV-RM-0912.txt",
+      "type": "invoice",
+      "readable": true,
+      "summary": "Syarikat Rempah Maju invoice: chilli, shallots, garlic, belacan, tamarind"
+    },
+    {
+      "doc_id": "DOC-008",
+      "path": "nota-pemilik.txt",
+      "type": "owner_note",
+      "readable": true,
+      "summary": "Owner note: business, staff, products, SSM and typhoid status"
+    },
+    {
+      "doc_id": "DOC-009",
+      "path": "photos/photo-01-dapur.jpg",
+      "type": "photo",
+      "readable": true,
+      "summary": "Home production kitchen"
+    },
+    {
+      "doc_id": "DOC-010",
+      "path": "photos/photo-02-stor.jpg",
+      "type": "photo",
+      "readable": true,
+      "summary": "Dry store room"
+    },
+    {
+      "doc_id": "DOC-011",
+      "path": "photos/photo-03-kabur.jpg",
+      "type": "photo",
+      "readable": false,
+      "summary": "Ingredient label close-up, too blurred to read; nothing extracted"
+    },
+    {
+      "doc_id": "DOC-012",
+      "path": "recipes/resepi-sambal-original.md",
+      "type": "recipe",
+      "readable": true,
+      "summary": "Sambal Original recipe, batch ~40 jars"
+    },
+    {
+      "doc_id": "DOC-013",
+      "path": "recipes/sambal ikan bilis.txt",
+      "type": "recipe",
+      "readable": true,
+      "summary": "Sambal Ikan Bilis recipe; base same as Sambal Original"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "P1",
+      "name": "Sambal Original",
+      "source": "DOC-012",
+      "status": "EXTRACTED",
+      "ingredients": [
+        {
+          "ingredient_id": "P1-I01",
+          "name": "cili kering (dari Rempah Maju)",
+          "quantity": "1 kg",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I02",
+          "name": "bawang merah",
+          "quantity": "1.5 kg",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I03",
+          "name": "bawang putih",
+          "quantity": "300 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I04",
+          "name": "belacan Pak Ali",
+          "quantity": "200 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I05",
+          "name": "minyak masak (Sentosa tin)",
+          "quantity": "1.2 L",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I06",
+          "name": "gula",
+          "quantity": "400 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I07",
+          "name": "garam",
+          "quantity": "60 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P1-I08",
+          "name": "asam jawa",
+          "quantity": "250 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED"
+        }
+      ]
+    },
+    {
+      "product_id": "P2",
+      "name": "Sambal Ikan Bilis",
+      "source": "DOC-013",
+      "status": "EXTRACTED",
+      "ingredients": [
+        {
+          "ingredient_id": "P2-I01",
+          "name": "cili kering (dari Rempah Maju)",
+          "quantity": "1 kg",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I02",
+          "name": "bawang merah",
+          "quantity": "1.5 kg",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I03",
+          "name": "bawang putih",
+          "quantity": "300 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I04",
+          "name": "belacan Pak Ali",
+          "quantity": "200 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I05",
+          "name": "minyak masak (Sentosa tin)",
+          "quantity": "1.2 L",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I06",
+          "name": "gula",
+          "quantity": "400 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I07",
+          "name": "garam",
+          "quantity": "60 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I08",
+          "name": "asam jawa",
+          "quantity": "250 g",
+          "source": "DOC-012",
+          "status": "EXTRACTED",
+          "note": "inherited via reference 'base sama mcm sambal original' in DOC-013"
+        },
+        {
+          "ingredient_id": "P2-I09",
+          "name": "ikan bilis (beli kat pasar Selasa)",
+          "quantity": "800g",
+          "source": "DOC-013",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I10",
+          "name": "serbuk perisa seafood (Bintang)",
+          "quantity": "50g",
+          "source": "DOC-013",
+          "status": "EXTRACTED"
+        },
+        {
+          "ingredient_id": "P2-I11",
+          "name": "E471",
+          "quantity": "sikit - 20g",
+          "source": "DOC-013",
+          "status": "EXTRACTED"
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "supplier_id": "S1",
+      "name": "Syarikat Rempah Maju",
+      "source": "DOC-007",
+      "status": "EXTRACTED"
+    },
+    {
+      "supplier_id": "S2",
+      "name": "Pembekal Minyak Sentosa",
+      "source": "DOC-006",
+      "status": "EXTRACTED"
+    },
+    {
+      "supplier_id": "S3",
+      "name": "Bintang Food Ingredients",
+      "source": "DOC-005",
+      "status": "EXTRACTED"
+    }
+  ],
+  "invoice_lines": [
+    {
+      "line_id": "L1",
+      "doc_id": "DOC-007",
+      "supplier_id": "S1",
+      "item": "Cili kering kerinting",
+      "code": null,
+      "brand": "Cili Kering Maju",
+      "date": "2026-09-12",
+      "source": "DOC-007",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L2",
+      "doc_id": "DOC-007",
+      "supplier_id": "S1",
+      "item": "Bawang merah",
+      "code": null,
+      "brand": null,
+      "date": "2026-09-12",
+      "source": "DOC-007",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L3",
+      "doc_id": "DOC-007",
+      "supplier_id": "S1",
+      "item": "Bawang putih",
+      "code": null,
+      "brand": null,
+      "date": "2026-09-12",
+      "source": "DOC-007",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L4",
+      "doc_id": "DOC-007",
+      "supplier_id": "S1",
+      "item": "Belacan blok",
+      "code": null,
+      "brand": "Belacan Pak Ali",
+      "date": "2026-09-12",
+      "source": "DOC-007",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L5",
+      "doc_id": "DOC-007",
+      "supplier_id": "S1",
+      "item": "Asam jawa",
+      "code": null,
+      "brand": "Maju",
+      "date": "2026-09-12",
+      "source": "DOC-007",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L6",
+      "doc_id": "DOC-006",
+      "supplier_id": "S2",
+      "item": "Minyak Masak Sentosa 17kg tin (palm olein)",
+      "code": null,
+      "brand": "Minyak Masak Sentosa",
+      "date": "2026-09-20",
+      "source": "DOC-006",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L7",
+      "doc_id": "DOC-006",
+      "supplier_id": "S2",
+      "item": "Gula Putih Halus 1kg",
+      "code": null,
+      "brand": null,
+      "date": "2026-09-20",
+      "source": "DOC-006",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L8",
+      "doc_id": "DOC-006",
+      "supplier_id": "S2",
+      "item": "Garam halus 1kg",
+      "code": null,
+      "brand": null,
+      "date": "2026-09-20",
+      "source": "DOC-006",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L9",
+      "doc_id": "DOC-005",
+      "supplier_id": "S3",
+      "item": "Seafood flavour powder 500g",
+      "code": "SF-210",
+      "brand": null,
+      "date": "2026-09-05",
+      "source": "DOC-005",
+      "status": "EXTRACTED"
+    },
+    {
+      "line_id": "L10",
+      "doc_id": "DOC-005",
+      "supplier_id": "S3",
+      "item": "Emulsifier E471 (mono- & diglycerides) 1kg",
+      "code": "EM-471",
+      "brand": null,
+      "date": "2026-09-05",
+      "source": "DOC-005",
+      "status": "EXTRACTED",
+      "note": "Invoice remark: origin of E471 - imported, see spec sheet (not attached)"
+    }
+  ],
+  "certificates": [
+    {
+      "cert_id": "C1",
+      "doc_id": "DOC-001",
+      "holder": "Bintang Food Ingredients",
+      "certificate_no": "SAMPLE-HALAL-BF-01011",
+      "issuer": null,
+      "products_covered": [
+        "Seafood Flavour Powder SF-200"
+      ],
+      "expiry_date": "2027-03-15",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-001",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C2",
+      "doc_id": "DOC-002",
+      "holder": "Perusahaan Belacan Pak Ali",
+      "certificate_no": "SAMPLE-HALAL-PA-00456",
+      "issuer": null,
+      "products_covered": [
+        "Belacan Pak Ali (shrimp paste block)"
+      ],
+      "expiry_date": "2026-08-31",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-002",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C3",
+      "doc_id": "DOC-003",
+      "holder": "Pembekal Minyak Sentosa",
+      "certificate_no": "SAMPLE-HALAL-MS-00789",
+      "issuer": null,
+      "products_covered": [
+        "Minyak Masak Sentosa (palm olein cooking oil)"
+      ],
+      "expiry_date": "2026-11-20",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-003",
+      "status": "EXTRACTED"
+    },
+    {
+      "cert_id": "C4",
+      "doc_id": "DOC-004",
+      "holder": "Syarikat Rempah Maju",
+      "certificate_no": "SAMPLE-HALAL-RM-00123",
+      "issuer": null,
+      "products_covered": [
+        "Cili Kering Maju (dried chilli)",
+        "Asam Jawa Maju (tamarind)"
+      ],
+      "expiry_date": "2027-06-30",
+      "sample_or_fictional_marking": true,
+      "source": "DOC-004",
+      "status": "EXTRACTED"
+    }
+  ],
+  "photo_observations": [
+    {
+      "obs_id": "O1",
+      "doc_id": "DOC-009",
+      "text": "Stainless steel prep table, 2-burner gas stove, large wok",
+      "source": "DOC-009",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O2",
+      "doc_id": "DOC-009",
+      "text": "Sink with hand soap; no hand-wash sign visible",
+      "source": "DOC-009",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O3",
+      "doc_id": "DOC-009",
+      "text": "Glass jars drying on rack next to stove",
+      "source": "DOC-009",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O4",
+      "doc_id": "DOC-009",
+      "text": "Wall calendar; no cleaning schedule visible",
+      "source": "DOC-009",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O5",
+      "doc_id": "DOC-010",
+      "text": "Sacks labelled 'Cili Kering Maju' on plastic pallet",
+      "source": "DOC-010",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O6",
+      "doc_id": "DOC-010",
+      "text": "2 tins labelled 'Minyak Masak Sentosa'",
+      "source": "DOC-010",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O7",
+      "doc_id": "DOC-010",
+      "text": "1 white plastic tub with no label on top shelf",
+      "source": "DOC-010",
+      "status": "OBSERVED"
+    },
+    {
+      "obs_id": "O8",
+      "doc_id": "DOC-010",
+      "text": "Household items (detergent) on same shelf as food",
+      "source": "DOC-010",
+      "status": "OBSERVED"
+    }
+  ],
+  "needs_review": [
+    {
+      "nr_id": "NR-01",
+      "about": "ikan bilis supplier",
+      "reason": "Bought at the pasar; no invoice or receipt in the folder",
+      "source": "DOC-013",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-02",
+      "about": "photo-03-kabur.jpg",
+      "reason": "Too blurred to read; re-take the photo of the label",
+      "source": "DOC-011",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-03",
+      "about": "unlabelled tub in store",
+      "reason": "Contents unknown from photo; owner must identify and label it",
+      "source": "DOC-010",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-04",
+      "about": "E471 spec sheet",
+      "reason": "Invoice refers to a spec sheet that is not attached; source of E471 unknown",
+      "source": "DOC-005",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-05",
+      "about": "SSM registration",
+      "reason": "Owner note says SSM exists but no copy is in the folder",
+      "source": "DOC-008",
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "nr_id": "NR-06",
+      "about": "typhoid vaccination",
+      "reason": "Owner note: sister vaccinated in 2024 'rasanya', owner not yet; no records",
+      "source": "DOC-008",
+      "status": "NEEDS_REVIEW"
+    }
+  ]
+}

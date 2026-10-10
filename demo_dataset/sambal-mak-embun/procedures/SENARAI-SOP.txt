@@ -1,0 +1,9 @@
+SENARAI PROSEDUR OPERASI STANDARD (SOP) - SAMBAL MAK EMBUN
+Disediakan oleh: Embun binti Contoh        Kemaskini: 05/09/2026
+
+SOP-01  Penerimaan bahan mentah
+SOP-02  Penyimpanan bahan & produk siap
+SOP-03  Pembersihan & sanitasi peralatan dan premis
+SOP-04  Kawalan perosak
+
+Semua SOP disimpan dalam folder ini dan dicetak di dinding dapur.
