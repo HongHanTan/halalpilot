@@ -1,0 +1,17 @@
+{
+  "schema": "halalpilot/repair-log@1",
+  "_comment": "Kept by halalpilot-team-lead. One entry per repair round.",
+  "rounds": [
+    {
+      "round": 1,
+      "validation_errors_before": 0,
+      "audit_findings_routed": ["F-01"],
+      "dispatched": [
+        { "agent": "halalpilot-ingredient-investigator", "items": ["F-01", "RISK_UNDERSTATED /rows/4"], "result": "fixed|converted_to_NEEDS_REVIEW|disputed", "note": "" }
+      ],
+      "validation_errors_after": 0,
+      "audit_verdict_after": "PASS|FAIL"
+    }
+  ],
+  "stopped_because": "clean|max_rounds|only_owner_actions_left"
+}

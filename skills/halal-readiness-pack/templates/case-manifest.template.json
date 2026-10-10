@@ -1,0 +1,39 @@
+{
+  "schema": "halalpilot/case-manifest@1",
+  "_comment": "Written by halalpilot-evidence-clerk. Paths are relative to the case folder. Every fact: status EXTRACTED|OBSERVED + source, or status NEEDS_REVIEW + reason. Never fill a value you cannot see.",
+  "case_id": "<kebab-case-business-name>",
+  "as_of": "YYYY-MM-DD",
+  "business": {
+    "name":      { "value": "<as written>", "source": "DOC-001", "status": "EXTRACTED" },
+    "address":   { "value": null, "source": null, "status": "NEEDS_REVIEW", "reason": "No document states the premise address" },
+    "food_handlers": { "value": "<as written>", "source": "DOC-001", "status": "EXTRACTED" }
+  },
+  "documents": [
+    { "doc_id": "DOC-001", "path": "nota-pemilik.txt", "type": "owner_note", "readable": true, "summary": "<one line>" },
+    { "doc_id": "DOC-002", "path": "photos/blurred.jpg", "type": "photo", "readable": false, "summary": "Too blurred to read; nothing extracted" }
+  ],
+  "products": [
+    {
+      "product_id": "P1", "name": "<as written>", "source": "DOC-00x", "status": "EXTRACTED",
+      "ingredients": [
+        { "ingredient_id": "P1-I01", "name": "<as written>", "quantity": "<as written>", "source": "DOC-00x", "status": "EXTRACTED" },
+        { "ingredient_id": "P1-I02", "name": "<as written>", "quantity": null, "source": "DOC-00x", "status": "NEEDS_REVIEW", "reason": "Recipe says 'sikit' with no amount" }
+      ]
+    }
+  ],
+  "suppliers": [
+    { "supplier_id": "S1", "name": "<as written on invoice>", "source": "DOC-00x", "status": "EXTRACTED" }
+  ],
+  "invoice_lines": [
+    { "line_id": "L1", "doc_id": "DOC-00x", "supplier_id": "S1", "item": "<as written>", "code": "<as written or null>", "brand": "<as written or null>", "date": "YYYY-MM-DD", "source": "DOC-00x", "status": "EXTRACTED" }
+  ],
+  "certificates": [
+    { "cert_id": "C1", "doc_id": "DOC-00x", "holder": "<as written>", "certificate_no": "<as written>", "issuer": null, "products_covered": ["<as written>"], "expiry_date": "YYYY-MM-DD", "sample_or_fictional_marking": false, "source": "DOC-00x", "status": "EXTRACTED" }
+  ],
+  "photo_observations": [
+    { "obs_id": "O1", "doc_id": "DOC-00x", "text": "<only what is visible>", "source": "DOC-00x", "status": "OBSERVED" }
+  ],
+  "needs_review": [
+    { "nr_id": "NR-01", "about": "<field or item>", "reason": "<what is missing and where it would come from>", "source": null, "status": "NEEDS_REVIEW" }
+  ]
+}

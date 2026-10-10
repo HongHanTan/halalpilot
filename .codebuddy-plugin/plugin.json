@@ -1,0 +1,113 @@
+{
+  "name": "halalpilot",
+  "version": "0.1.0",
+  "description": "A five-role expert team that turns a small food business's messy folder of recipes, supplier invoices, halal certificates and kitchen photos into an evidence-linked halal certification readiness pack. A lead orchestrates evidence extraction, parallel ingredient and process work, an independent mock audit, a repair loop and a validated final pack. Missing evidence is never invented; it is labelled NEEDS_REVIEW.",
+  "author": {
+    "name": "HalalPilot"
+  },
+  "keywords": ["halal", "certification", "compliance", "sme", "malaysia", "food-safety"],
+  "agents": [
+    "./agents/halalpilot-team-lead.md",
+    "./agents/halalpilot-evidence-clerk.md",
+    "./agents/halalpilot-ingredient-investigator.md",
+    "./agents/halalpilot-process-builder.md",
+    "./agents/halalpilot-mock-auditor.md"
+  ],
+  "skills": [
+    "./skills/halal-evidence-protocol",
+    "./skills/halal-readiness-pack"
+  ],
+
+  "expertType": "team",
+  "agentName": "halalpilot-team-lead",
+  "teamInfo": {
+    "leadAgent": "halalpilot-team-lead",
+    "memberAgents": [
+      "halalpilot-evidence-clerk",
+      "halalpilot-ingredient-investigator",
+      "halalpilot-process-builder",
+      "halalpilot-mock-auditor"
+    ]
+  },
+
+  "displayName": {
+    "en": "HalalPilot",
+    "zh": "HalalPilot 清真认证专家团"
+  },
+  "profession": {
+    "en": "Halal Certification Readiness Team",
+    "zh": "HalalPilot 清真认证专家团"
+  },
+  "displayDescription": {
+    "en": "Drop in your recipes, supplier invoices, certificates and kitchen photos. Five specialists trace every ingredient to a valid halal certificate, build your process documents, survive a mock audit and hand back a readiness pack. Gaps are flagged, never invented.",
+    "zh": "上传配方、发票、证书与厨房照片，五位专家逐一核查原料清真证书，模拟审核并生成认证准备包"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "04-DataAI",
+  "defaultInitPrompt": {
+    "en": "Get me ready for halal certification. My documents are in this folder.",
+    "zh": "帮我准备清真认证，我的资料都在这个文件夹里。"
+  },
+  "plugin": "halalpilot",
+  "tags": [
+    { "en": "Halal Certification", "zh": "清真认证" },
+    { "en": "Supplier Compliance", "zh": "供应商合规" },
+    { "en": "Mock Audit", "zh": "模拟审核" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Get me ready for halal certification. My documents are in this folder.",
+      "zh": "帮我准备清真认证，我的资料都在这个文件夹里。"
+    },
+    {
+      "en": "Check every ingredient against my supplier invoices and halal certificates, and flag anything expired or missing.",
+      "zh": "对照供应商发票与清真证书逐一核查原料，标出过期或缺失的证书。"
+    },
+    {
+      "en": "Run a strict mock halal audit on my existing application pack and tell me exactly what would fail.",
+      "zh": "对我现有的申请材料做一次严格的模拟清真审核，告诉我哪些会不通过。"
+    }
+  ],
+  "members": [
+    {
+      "id": "halalpilot-team-lead",
+      "displayName": { "en": "HalalPilot Lead", "zh": "HalalPilot 主理人" },
+      "name": { "en": "HalalPilot Lead", "zh": "HalalPilot 主理人" },
+      "profession": { "en": "Certification Orchestrator", "zh": "认证总调度" },
+      "avatar": "avatars/halalpilot-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "halalpilot-evidence-clerk",
+      "displayName": { "en": "Evidence Clerk", "zh": "证据书记员" },
+      "name": { "en": "Evidence Clerk", "zh": "证据书记员" },
+      "profession": { "en": "Document Extraction", "zh": "文档提取" },
+      "avatar": "avatars/halalpilot-evidence-clerk.png",
+      "role": "member"
+    },
+    {
+      "id": "halalpilot-ingredient-investigator",
+      "displayName": { "en": "Ingredient Investigator", "zh": "原料调查员" },
+      "name": { "en": "Ingredient Investigator", "zh": "原料调查员" },
+      "profession": { "en": "Supplier & Certificate Verification", "zh": "供应商与证书核查" },
+      "avatar": "avatars/halalpilot-ingredient-investigator.png",
+      "role": "member"
+    },
+    {
+      "id": "halalpilot-process-builder",
+      "displayName": { "en": "Process Builder", "zh": "流程构建师" },
+      "name": { "en": "Process Builder", "zh": "流程构建师" },
+      "profession": { "en": "Process Flows & Procedures", "zh": "工艺流程与程序" },
+      "avatar": "avatars/halalpilot-process-builder.png",
+      "role": "member"
+    },
+    {
+      "id": "halalpilot-mock-auditor",
+      "displayName": { "en": "Mock Auditor", "zh": "模拟审核员" },
+      "name": { "en": "Mock Auditor", "zh": "模拟审核员" },
+      "profession": { "en": "Independent Halal Audit", "zh": "独立清真审核" },
+      "avatar": "avatars/halalpilot-mock-auditor.png",
+      "role": "member"
+    }
+  ]
+}

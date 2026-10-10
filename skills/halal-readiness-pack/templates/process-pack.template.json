@@ -1,0 +1,24 @@
+{
+  "schema": "halalpilot/process-pack@1",
+  "_comment": "Written by halalpilot-process-builder. Everything you author is DRAFT_FOR_OWNER. based_on lists the doc_ids the draft reflects. Missing business documents are NEEDS_REVIEW with a reason.",
+  "flows": [
+    {
+      "product_id": "P1",
+      "steps": [
+        { "step_no": 1, "name": "Receiving", "description": "<what happens>", "halal_control_point": true,
+          "control": "Check halal logo/cert on every delivery against the approved ingredient list", "based_on": ["DOC-00x"], "status": "DRAFT_FOR_OWNER" },
+        { "step_no": 2, "name": "<step>", "description": "<what happens>", "halal_control_point": false,
+          "control": null, "based_on": [], "status": "NEEDS_REVIEW", "reason": "Recipe does not say how jars are sterilised" }
+      ]
+    }
+  ],
+  "procedures": [
+    { "sop_id": "SOP-01", "title": "Receiving and storage of ingredients", "purpose": "<one line>",
+      "steps": ["<imperative step>"], "records": ["Receiving log"], "based_on": ["DOC-00x"], "status": "DRAFT_FOR_OWNER" }
+  ],
+  "halal_policy_draft": { "text": "<short policy statement for the owner to sign>", "status": "DRAFT_FOR_OWNER" },
+  "missing_documents": [
+    { "md_id": "MD-01", "checklist_id": "D01", "document": "Business registration (SSM)", "reason": "Owner note says it exists but no copy is in the folder",
+      "owner_action": "Upload a copy of the SSM certificate", "blocking": true, "source": "DOC-001", "status": "NEEDS_REVIEW" }
+  ]
+}

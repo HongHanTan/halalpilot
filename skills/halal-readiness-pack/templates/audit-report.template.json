@@ -1,0 +1,21 @@
+{
+  "schema": "halalpilot/audit-report@1",
+  "_comment": "Written by halalpilot-mock-auditor. owner = the agent who must fix it, or 'owner' when only the business can supply the evidence (then fixable_by_team=false and status=OWNER_ACTION).",
+  "round": 1,
+  "verdict": "PASS|FAIL",
+  "findings": [
+    {
+      "finding_id": "F-01",
+      "severity": "CRITICAL|MAJOR|MINOR",
+      "category": "certificate|traceability|risk-ingredient|cross-contamination|procedure|documentation|consistency",
+      "target": "02-ingredient-matrix.json#/rows/3",
+      "issue": "<what an auditor would reject>",
+      "evidence": ["DOC-00x"],
+      "required_fix": "<concrete change>",
+      "owner": "halalpilot-ingredient-investigator",
+      "fixable_by_team": true,
+      "status": "OPEN|RESOLVED|OWNER_ACTION"
+    }
+  ],
+  "strengths": ["<what is already solid>"]
+}

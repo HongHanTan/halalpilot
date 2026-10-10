@@ -1,0 +1,27 @@
+{
+  "schema": "halalpilot/ingredient-matrix@1",
+  "_comment": "Written by halalpilot-ingredient-investigator. Exactly one row per manifest ingredient_id. cert_expiry is copied from the manifest, never re-typed from memory.",
+  "as_of": "YYYY-MM-DD",
+  "rows": [
+    {
+      "ingredient_id": "P1-I01", "product_id": "P1", "ingredient": "<manifest name>",
+      "risk_level": "LOW|MEDIUM|HIGH", "risk_reason": "<why, citing risk-ingredients.md row>",
+      "supplier_id": "S1", "invoice_line_id": "L1",
+      "cert_id": "C1", "cert_expiry": "YYYY-MM-DD",
+      "verdict": "VERIFIED|EXPIRING|EXPIRED|MISMATCH|NO_CERT|LOW_RISK_NO_CERT|NEEDS_REVIEW",
+      "evidence": ["DOC-00x", "DOC-00y"],
+      "reason": "<required when verdict is NEEDS_REVIEW>",
+      "actions": ["Verify certificate <no> in the official halal directory"]
+    }
+  ],
+  "supplier_requests": [
+    {
+      "request_id": "SR-01", "supplier_id": "S1", "cert_id": "C1",
+      "reason": "Certificate expired on YYYY-MM-DD",
+      "draft_message": "<polite message asking for the renewed certificate, in the owner's language>"
+    }
+  ],
+  "substitute_suggestions": [
+    { "ingredient_id": "P1-I0x", "suggestion": "<generic guidance, e.g. 'ask for a certified plant-based E471'>", "status": "NEEDS_REVIEW", "reason": "No certified alternative supplier is documented in the folder; owner must source one" }
+  ]
+}
