@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { topActions } from "@/lib/pack";
 import type { RunState } from "@/lib/orchestrator";
+import EvidenceChain from "./EvidenceChain";
 
 function download(name: string, text: string, type = "application/json") {
   const url = URL.createObjectURL(new Blob([text], { type: `${type};charset=utf-8` }));
@@ -51,11 +52,7 @@ export default function Results({ state }: { state: RunState }) {
   if (!m || !rd) return null;
 
   const suppliers: any[] = m.suppliers ?? [];
-  const certs: any[] = m.certificates ?? [];
-  const products: any[] = m.products ?? [];
   const sName = (id?: string) => suppliers.find((s) => s.supplier_id === id)?.name ?? "—";
-  const pName = (id?: string) => products.find((p) => p.product_id === id)?.name ?? id ?? "—";
-  const certNo = (id?: string) => certs.find((c) => c.cert_id === id)?.certificate_no ?? "—";
   const rows: any[] = matrix?.rows ?? [];
   const findings: any[] = audit?.findings ?? [];
   const openCount = findings.filter((f) => f.status === "OPEN").length;
@@ -140,45 +137,10 @@ export default function Results({ state }: { state: RunState }) {
         </div>
       </div>
 
+      <EvidenceChain manifest={m} matrix={matrix} />
+
       {rows.length > 0 && (
         <div className="card">
-          <h2>Ingredient X-ray</h2>
-          <p className="sub">Every ingredient traced to an invoice and a certificate, or flagged. Evidence cites the document it came from.</p>
-          <div className="tablewrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Ingredient</th>
-                  <th>Risk</th>
-                  <th>Supplier</th>
-                  <th>Certificate</th>
-                  <th>Expiry</th>
-                  <th>Verdict</th>
-                  <th>Evidence</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((r, i) => (
-                  <tr key={r.ingredient_id ?? i}>
-                    <td>{pName(r.product_id)}</td>
-                    <td>{r.ingredient}</td>
-                    <td>
-                      <span className={`v-chip r-${r.risk_level}`}>{r.risk_level}</span>
-                    </td>
-                    <td>{sName(r.supplier_id)}</td>
-                    <td className="mono">{certNo(r.cert_id)}</td>
-                    <td className="mono">{r.cert_expiry ?? "—"}</td>
-                    <td>
-                      <span className={`v-chip v-${r.verdict}`}>{r.verdict}</span>
-                    </td>
-                    <td className="mono muted">{(r.evidence ?? []).join(" ") || "—"}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
           {(matrix?.supplier_requests ?? []).length > 0 && (
             <details>
               <summary>Draft messages to suppliers ({matrix.supplier_requests.length})</summary>

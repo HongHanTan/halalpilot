@@ -2,7 +2,8 @@
 import { useCallback, useRef, useState } from "react";
 import { fetchDemoZip, IntakeError, readZip, type Intake } from "@/lib/intake";
 import { localToday, runPipeline, type RunState } from "@/lib/orchestrator";
-import Timeline from "@/components/Timeline";
+import { loadRecording, replayFetch } from "@/lib/replay";
+import AgentFlow from "@/components/AgentFlow";
 import Results from "@/components/Results";
 
 const DEFAULT_PROMPT = "Get me ready for halal certification.";
@@ -14,6 +15,7 @@ export default function Page() {
   const [accessCode, setAccessCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [reading, setReading] = useState(false);
+  const [isReplay, setIsReplay] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [state, setState] = useState<RunState | null>(null);
   const [over, setOver] = useState(false);
@@ -58,19 +60,31 @@ export default function Page() {
     }
   };
 
-  const run = async () => {
-    if (!intake) return;
+  const start = async (replay: boolean) => {
     setBusy(true);
     setError(null);
+    setIsReplay(replay);
     const ac = new AbortController();
     abortRef.current = ac;
     try {
+      let files = intake?.files ?? [];
+      let inventory = intake?.inventory ?? [];
+      let fetchImpl: typeof fetch | undefined;
+      if (replay) {
+        const rec = await loadRecording();
+        files = rec.files;
+        inventory = rec.inventory;
+        fetchImpl = replayFetch(rec);
+        setFileName(`${rec.case} (recorded ${rec.recordedAt})`);
+      }
       const final = await runPipeline(
-        { files: intake.files, inventory: intake.inventory, ownerPrompt: prompt, accessCode: accessCode || undefined },
+        { files, inventory, ownerPrompt: prompt, accessCode: accessCode || undefined, fetchImpl },
         setState,
         ac.signal,
       );
       if (final.error) setError(final.error);
+    } catch (e) {
+      setError(String((e as Error)?.message ?? e));
     } finally {
       setBusy(false);
       abortRef.current = null;
@@ -86,19 +100,20 @@ export default function Page() {
         <img src="/avatars/halalpilot.png" alt="" />
         <div>
           <h1>HalalPilot</h1>
-          <p>Halal certification readiness, from a messy folder to a submission pack.</p>
+          <p>From a shoebox of documents to a halal application a certifier will accept.</p>
         </div>
       </header>
 
       <p className="hero">
-        Drop in the folder you already have — recipes, supplier invoices, halal certificates, kitchen photos — and type one sentence. A team of five
-        agents reads every file, traces each ingredient to a supplier certificate, drafts your processes, then <strong>audits its own work</strong> and
-        repairs what fails. Every claim cites a file. Nothing is invented.
+        A home sambal maker in Kajang already <strong>has</strong> the recipes, the invoices and the supplier certificates. What she doesn&apos;t have
+        is <strong>RM8,000 for a consultant</strong> to turn them into an application — so she stays at the pasar instead of supplying supermarkets.
+        Drop the folder in. Type one sentence. Five agents do the consultant&apos;s job in about a minute, then{" "}
+        <strong>audit their own work and repair what fails</strong>. Every claim cites the file it came from. Nothing is invented.
       </p>
 
       <div className="card">
         <h2>1. Your documents</h2>
-        <p className="sub">One .zip of your business folder. Text, PDF and photos are read; up to 80 files, 15 MB.</p>
+        <p className="sub">One .zip of your business folder, exactly as it is. Text, PDF and photos are read; up to 80 files, 15 MB.</p>
 
         {!intake ? (
           <div
@@ -119,7 +134,7 @@ export default function Page() {
             }}
           >
             <div className="big">{reading ? "Reading your zip…" : "Drop your .zip here, or click to choose"}</div>
-            <div className="small">Nothing is stored. Files are sent to the model only for this run.</div>
+            <div className="small">Nothing is stored. Your files are sent to the model only for this run.</div>
           </div>
         ) : (
           <div className="file-ok">
@@ -156,7 +171,7 @@ export default function Page() {
         />
         {!intake && (
           <div className="row" style={{ marginTop: 12 }}>
-            <button className="btn" onClick={useDemo} disabled={reading}>
+            <button className="btn" onClick={useDemo} disabled={reading || busy}>
               Use the demo case (Sambal Mak Embun)
             </button>
             <span className="muted" style={{ fontSize: 13 }}>
@@ -183,12 +198,16 @@ export default function Page() {
         </details>
 
         <div className="row" style={{ marginTop: 16 }}>
-          <button className="btn primary" onClick={run} disabled={!intake || busy || reading}>
-            {busy ? "Running the team…" : "Run HalalPilot"}
+          <button className="btn primary" onClick={() => start(false)} disabled={!intake || busy || reading}>
+            {busy && !isReplay ? "Running the team…" : "Run HalalPilot"}
           </button>
-          {busy && (
+          {busy ? (
             <button className="btn" onClick={() => abortRef.current?.abort()}>
               Stop
+            </button>
+          ) : (
+            <button className="btn" onClick={() => start(true)} disabled={reading} title="Replays a recorded run through the same pipeline">
+              Replay the demo run
             </button>
           )}
           <div className="spacer" />
@@ -197,6 +216,12 @@ export default function Page() {
           </span>
         </div>
 
+        {isReplay && state && (
+          <div className="row" style={{ marginTop: 12 }}>
+            <span className="replay-badge">● REPLAY — recorded agent output, not a live run</span>
+          </div>
+        )}
+
         {error && (
           <div className="alert bad" role="alert">
             {error}
@@ -204,7 +229,7 @@ export default function Page() {
         )}
       </div>
 
-      {state && <Timeline steps={state.steps} />}
+      {state && <AgentFlow state={state} />}
       {state?.done && state.error && state.data.manifest && (
         <div className="alert warn">The run stopped early. What the team produced before that is below.</div>
       )}
@@ -212,7 +237,8 @@ export default function Page() {
 
       <footer className="foot">
         HalalPilot prepares an application. It does not certify anything, and it does not check certificates against the official JAKIM / state
-        directory — that stays an action item in your pack. Same agents and the same validator as the HalalPilot WorkBuddy expert team.
+        directory — that stays an action item in your pack. The same five agents and the same validator also run as the HalalPilot WorkBuddy expert
+        team.
       </footer>
     </div>
   );

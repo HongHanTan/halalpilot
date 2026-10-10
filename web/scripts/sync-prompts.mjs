@@ -7,6 +7,8 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const plugin = resolve(here, "..", "..", "halalpilot");
 const out = resolve(here, "..", "prompts", "bundle.json");
+// Client-safe: bundle.json is only reachable from server-only code, but the UI needs to cite sources.
+const provOut = resolve(here, "..", "lib", "provenance.json");
 
 if (!existsSync(join(plugin, "agents"))) {
   console.log("sync-prompts: plugin folder not found, keeping committed bundle");
@@ -46,4 +48,23 @@ const bundle = {
 
 mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, JSON.stringify(bundle, null, 2) + "\n");
-console.log(`sync-prompts: wrote ${out}`);
+
+// Provenance: which plugin file backs each agent, so the page can prove the claim rather than assert it.
+const AGENT_FILE = {
+  clerk: "evidence-clerk",
+  investigator: "ingredient-investigator",
+  "process-builder": "process-builder",
+  auditor: "mock-auditor",
+};
+const skillsOf = (name) => {
+  const fm = readFileSync(join(plugin, "agents", `halalpilot-${name}.md`), "utf8").match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  return fm ? [...fm[1].matchAll(/^\s+-\s+(\S+)/gm)].map((m) => m[1]) : [];
+};
+const provenance = Object.fromEntries(
+  Object.entries(AGENT_FILE).map(([role, name]) => [
+    role,
+    { file: `agents/halalpilot-${name}.md`, chars: bundle.agents[role].length, skills: skillsOf(name) },
+  ]),
+);
+writeFileSync(provOut, JSON.stringify(provenance, null, 2) + "\n");
+console.log(`sync-prompts: wrote ${out} and ${provOut}`);

@@ -47,6 +47,8 @@ export interface RunOptions {
   ownerPrompt: string;
   accessCode?: string;
   maxRepairRounds?: number;
+  /** Replay injects a recorded transport here; everything else runs for real. */
+  fetchImpl?: typeof fetch;
 }
 
 const PART_BY_ROLE: Record<Role, Part> = {
@@ -64,11 +66,12 @@ export function localToday(): string {
 
 class StepFailure extends Error {}
 
-async function callAgent(req: AgentRequest, accessCode?: string, signal?: AbortSignal): Promise<AgentResponse> {
+async function callAgent(req: AgentRequest, accessCode?: string, signal?: AbortSignal, fetchImpl?: typeof fetch): Promise<AgentResponse> {
+  const doFetch = fetchImpl ?? fetch;
   let lastErr = "Request failed";
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const res = await fetch("/api/agent", {
+      const res = await doFetch("/api/agent", {
         method: "POST",
         headers: { "content-type": "application/json", ...(accessCode ? { "x-access-code": accessCode } : {}) },
         body: JSON.stringify(req),
@@ -102,6 +105,56 @@ async function callAgent(req: AgentRequest, accessCode?: string, signal?: AbortS
 
 function isPackFile(v: unknown): v is Record<string, any> {
   return !!v && typeof v === "object" && !Array.isArray(v) && typeof (v as any).schema === "string";
+}
+
+const EXPECTED_SCHEMA: Record<Role, string> = {
+  clerk: "halalpilot/case-manifest@1",
+  investigator: "halalpilot/ingredient-matrix@1",
+  "process-builder": "halalpilot/process-pack@1",
+  auditor: "halalpilot/audit-report@1",
+};
+const SHAPE_KEY: Record<Role, string> = {
+  clerk: "documents",
+  investigator: "rows",
+  "process-builder": "flows",
+  auditor: "findings",
+};
+
+/**
+ * Models occasionally drop the `schema` string or nest the file under a wrapper key.
+ * Recover when the payload is recognisably the right file; return null when it is not.
+ */
+function coercePackFile(v: unknown, role: Role): Record<string, any> | null {
+  if (!v || typeof v !== "object" || Array.isArray(v)) return null;
+  const outer = v as Record<string, any>;
+  const nested = Object.values(outer).find(
+    (x) => x && typeof x === "object" && !Array.isArray(x) && typeof (x as any).schema === "string",
+  ) as Record<string, any> | undefined;
+  const obj = typeof outer.schema === "string" ? outer : (nested ?? outer);
+  if (typeof obj.schema !== "string") {
+    if (!Array.isArray(obj[SHAPE_KEY[role]])) return null;
+    obj.schema = EXPECTED_SCHEMA[role]; // right shape, missing label — the validator still checks the contents
+  }
+  return obj;
+}
+
+/** One agent call that must return its output file. Retries once on an unusable shape. */
+async function callAgentFile(
+  req: AgentRequest,
+  role: Role,
+  accessCode?: string,
+  signal?: AbortSignal,
+  fetchImpl?: typeof fetch,
+): Promise<Record<string, any>> {
+  let last: unknown = null;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const r = await callAgent(req, accessCode, signal, fetchImpl);
+    const fixed = coercePackFile(r.json, role);
+    if (fixed) return fixed;
+    last = r.json;
+  }
+  const keys = last && typeof last === "object" ? Object.keys(last).slice(0, 6).join(", ") : typeof last;
+  throw new StepFailure(`${AGENT_META[role].name} returned an unexpected shape (keys: ${keys})`);
 }
 
 export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => void, signal?: AbortSignal): Promise<RunState> {
@@ -160,11 +213,9 @@ export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => v
     // Phase 1: Evidence Clerk, then gate G1
     const g1 = "Phase 1 · Evidence extraction";
     const clerk = addStep(g1, false, "clerk", AGENT_META.clerk.job);
-    const manifest = await track(clerk, async () => {
-      const r = await callAgent({ ...base, role: "clerk", files: opts.files }, opts.accessCode, signal);
-      if (!isPackFile(r.json)) throw new StepFailure("Evidence Clerk did not return a manifest object");
-      return r.json;
-    });
+    const manifest = await track(clerk, () =>
+      callAgentFile({ ...base, role: "clerk", files: opts.files }, "clerk", opts.accessCode, signal, opts.fetchImpl),
+    );
     state.data.manifest = manifest;
     emit();
 
@@ -174,15 +225,15 @@ export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => v
       if (!mine.length) break;
       const fix = addStep(g1, false, "clerk", `Gate G1: fix ${mine.length} manifest error(s) (try ${attempt}/2)`);
       try {
-        const repaired = await track(fix, async () => {
-          const r = await callAgent(
+        const repaired = await track(fix, () =>
+          callAgentFile(
             { ...base, role: "clerk", mode: "repair", files: opts.files, current: state.data.manifest, issues: mine.slice(0, 40).map(slim) },
+            "clerk",
             opts.accessCode,
             signal,
-          );
-          if (!isPackFile(r.json)) throw new StepFailure("repair did not return a manifest");
-          return r.json;
-        });
+            opts.fetchImpl,
+          ),
+        );
         state.data.manifest = repaired;
       } catch (e: any) {
         if (e?.name === "AbortError") throw e;
@@ -199,9 +250,13 @@ export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => v
     const pb = addStep(g2, true, "process-builder", AGENT_META["process-builder"].job);
     const build = (role: Role, step: Step) =>
       track(step, async () => {
-        const r = await callAgent({ ...base, role, manifest: state.data.manifest }, opts.accessCode, signal);
-        if (!isPackFile(r.json)) throw new StepFailure(`${AGENT_META[role].name} did not return a JSON object`);
-        state.data[PART_BY_ROLE[role]] = r.json;
+        state.data[PART_BY_ROLE[role]] = await callAgentFile(
+          { ...base, role, manifest: state.data.manifest },
+          role,
+          opts.accessCode,
+          signal,
+          opts.fetchImpl,
+        );
         emit();
       });
     const built = await Promise.allSettled([build("investigator", inv), build("process-builder", pb)]);
@@ -213,7 +268,7 @@ export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => v
       const step = addStep(group, true, "auditor", `${AGENT_META.auditor.job} (round ${round})`);
       try {
         await track(step, async () => {
-          const r = await callAgent(
+          state.data.audit = await callAgentFile(
             {
               ...base,
               role: "auditor",
@@ -224,11 +279,11 @@ export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => v
               process: state.data.process,
               previousAudit: state.data.audit,
             },
+            "auditor",
             opts.accessCode,
             signal,
+            opts.fetchImpl,
           );
-          if (!isPackFile(r.json)) throw new StepFailure("Mock Auditor did not return a JSON object");
-          state.data.audit = r.json;
           state.auditAvailable = true;
           emit();
         });
@@ -279,7 +334,7 @@ export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => v
         const rec = entry.dispatched[entry.dispatched.length - 1];
         return track(step, async () => {
           const part = PART_BY_ROLE[role];
-          const r = await callAgent(
+          state.data[part] = await callAgentFile(
             {
               ...base,
               role,
@@ -289,11 +344,11 @@ export async function runPipeline(opts: RunOptions, onUpdate: (s: RunState) => v
               current: state.data[part],
               issues: issues.slice(0, 40),
             },
+            role,
             opts.accessCode,
             signal,
+            opts.fetchImpl,
           );
-          if (!isPackFile(r.json)) throw new StepFailure("repair did not return a JSON file");
-          state.data[part] = r.json;
           rec.result = "returned";
           emit();
         }).catch((e) => {
